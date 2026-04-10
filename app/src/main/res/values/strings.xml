@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Uygulama adı -->
+    <string name="app_name">Kalori Takip</string>
+
+    <!-- Genel -->
+    <string name="btn_save">Kaydet</string>
+    <string name="btn_cancel">İptal</string>
+    <string name="btn_continue">Devam Et</string>
+    <string name="btn_edit">Düzenle</string>
+    <string name="btn_delete">Sil</string>
+    <string name="btn_add">Ekle</string>
+    <string name="btn_search">Ara</string>
+    <string name="btn_back">Geri</string>
+    <string name="error_required_field">Bu alan zorunludur.</string>
+
+    <!-- Splash -->
+    <string name="splash_loading">Yükleniyor…</string>
+
+    <!-- Profil Kurulum -->
+    <string name="title_profile_setup">Profil Oluştur</string>
+    <string name="hint_name">Adınız</string>
+    <string name="hint_age">Yaşınız</string>
+    <string name="hint_height">Boy (cm)</string>
+    <string name="hint_weight">Kilo (kg)</string>
+    <string name="label_gender">Cinsiyet</string>
+    <string name="gender_male">Erkek</string>
+    <string name="gender_female">Kadın</string>
+    <string name="label_disease">Kronik hastalığınız var mı?</string>
+    <string name="disease_none">Hayır</string>
+    <string name="disease_diabetes">Diyabet</string>
+    <string name="disease_hypertension">Tansiyon</string>
+    <string name="disease_heart">Kalp Hastalığı</string>
+    <string name="label_calorie_goal">Günlük Kalori Hedefiniz</string>
+    <string name="hint_calorie_goal">Kalori (kcal)</string>
+    <string name="profile_setup_complete">Profil oluşturuldu!</string>
+
+    <!-- Ana Ekran -->
+    <string name="title_main">Ana Sayfa</string>
+    <string name="label_daily_goal">Günlük Hedef</string>
+    <string name="label_consumed">Alınan</string>
+    <string name="label_remaining">Kalan</string>
+    <string name="label_kcal">kcal</string>
+    <string name="label_todays_meals">Bugünkü Öğünler</string>
+    <string name="label_no_meals">Henüz öğün eklenmedi.</string>
+    <string name="btn_add_meal">+ Öğün Ekle</string>
+    <string name="btn_weekly_report">Haftalık Rapor</string>
+    <string name="warning_limit_exceeded">Günlük kalori limitinizi aştınız!</string>
+    <string name="label_meal_breakfast">Kahvaltı</string>
+    <string name="label_meal_lunch">Öğle</string>
+    <string name="label_meal_dinner">Akşam</string>
+    <string name="label_meal_snack">Atıştırmalık</string>
+
+    <!-- Yemek Ekleme -->
+    <string name="title_add_meal">Öğün Ekle</string>
+    <string name="hint_search_food">Yemek ara…</string>
+    <string name="hint_amount">Miktar (gram)</string>
+    <string name="warning_diabetes">⚠ Diyabet uyarısı: Bu yiyecek şeker içermektedir!</string>
+    <string name="meal_added_success">Öğün eklendi.</string>
+    <string name="error_select_food">Lütfen bir yemek seçiniz.</string>
+    <string name="error_invalid_amount">Geçerli bir miktar giriniz.</string>
+
+    <!-- Gıda Arama -->
+    <string name="title_food_search">Gıda Listesi</string>
+    <string name="category_all">Tümü</string>
+    <string name="category_breakfast">Kahvaltı</string>
+    <string name="category_lunch">Öğle</string>
+    <string name="category_dinner">Akşam</string>
+    <string name="category_snack">Atıştırmalık</string>
+
+    <!-- Haftalık Rapor -->
+    <string name="title_weekly_report">Haftalık Rapor</string>
+    <string name="label_report_goal_met">Hedefe uyuldu ✓</string>
+    <string name="label_report_goal_exceeded">Hedef aşıldı ✗</string>
+    <string name="label_report_no_data">Veri yok</string>
+
+    <!-- Profil Düzenleme -->
+    <string name="title_profile_edit">Profili Düzenle</string>
+    <string name="profile_updated">Profil güncellendi.</string>
+
+    <!-- Kamera -->
+    <string name="title_camera">Fotoğrafla Tanı</string>
+    <string name="btn_take_photo">Fotoğraf Çek</string>
+    <string name="camera_analyzing">Analiz ediliyor…</string>
+    <string name="btn_confirm_food">Onayla ve Ekle</string>
+    <string name="camera_permission_denied">Kamera izni gerekli.</string>
+    <string name="camera_result_prefix">Tahmin: </string>
+
+    <!-- Menü -->
+    <string name="menu_home">Ana Sayfa</string>
+    <string name="menu_report">Rapor</string>
+    <string name="menu_profile">Profil</string>
+    <string name="menu_settings">Ayarlar</string>
+
+    <!-- Ayarlar -->
+    <string name="title_settings">Ayarlar</string>
+    <string name="settings_section_profile">Profil</string>
+    <string name="settings_edit_profile">Profil Bilgilerini Düzenle</string>
+    <string name="settings_section_appearance">Görünüm</string>
+    <string name="settings_theme">Tema</string>
+    <string name="settings_language">Dil</string>
+    <string name="theme_system">Sistem Varsayılanı</string>
+    <string name="theme_light">Açık Tema</string>
+    <string name="theme_dark">Koyu Tema</string>
+    <string name="lang_turkish">Türkçe</string>
+    <string name="lang_english">English</string>
+    <string name="settings_section_about">Hakkında</string>
+    <string name="settings_version">Sürüm 1.0</string>
+    <string name="settings_course">BM443 Mobil Programlama</string>
+
+    <!-- Profil Sayfası -->
+    <string name="title_profile">Profilim</string>
+    <string name="profile_section_physical">Fiziksel Bilgiler</string>
+    <string name="profile_section_health">Sağlık Bilgileri</string>
+    <string name="profile_label_age">Yaş</string>
+    <string name="profile_label_gender">Cinsiyet</string>
+    <string name="profile_label_height">Boy</string>
+    <string name="profile_label_weight">Kilo</string>
+    <string name="profile_label_bmi">Vücut Kitle İndeksi (VKİ)</string>
+    <string name="profile_label_disease">Kronik Hastalık</string>
+    <string name="profile_label_calorie_goal">Günlük Kalori Hedefi</string>
+    <string name="bmi_underweight">Zayıf</string>
+    <string name="bmi_normal">Normal</string>
+    <string name="bmi_overweight">Kilolu</string>
+    <string name="bmi_obese">Obez</string>
+    <string name="btn_edit_profile">Profili Düzenle</string>
+    <string name="unit_cm">cm</string>
+    <string name="unit_kg">kg</string>
+    <string name="unit_kcal_day">kcal/gün</string>
+
+    <!-- Giriş / Kayıt -->
+    <string name="title_login">Giriş Yap</string>
+    <string name="title_register">Kayıt Ol</string>
+    <string name="hint_email">E-posta adresi</string>
+    <string name="hint_password">Şifre</string>
+    <string name="hint_password_confirm">Şifreyi tekrar girin</string>
+    <string name="btn_login">Giriş Yap</string>
+    <string name="btn_register">Kayıt Ol</string>
+    <string name="btn_logout">Çıkış Yap</string>
+    <string name="link_go_register">Hesabın yok mu? Kayıt ol</string>
+    <string name="link_go_login">Zaten hesabın var mı? Giriş yap</string>
+    <string name="error_invalid_email">Geçerli bir e-posta girin.</string>
+    <string name="error_password_short">Şifre en az 6 karakter olmalıdır.</string>
+    <string name="error_passwords_not_match">Şifreler eşleşmiyor.</string>
+    <string name="error_email_taken">Bu e-posta zaten kayıtlı.</string>
+    <string name="error_login_failed">E-posta veya şifre hatalı.</string>
+    <string name="logout_confirm_title">Çıkış Yap</string>
+    <string name="logout_confirm_message">Oturumu kapatmak istediğinize emin misiniz?</string>
+</resources>

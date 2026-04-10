@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Material 3 Primary Palette — yeşil/sağlık teması -->
+    <color name="primary">#2E7D32</color>
+    <color name="primary_variant">#1B5E20</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="secondary">#558B2F</color>
+    <color name="on_secondary">#FFFFFF</color>
+    <color name="background">#FAFAFA</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="on_surface">#212121</color>
+
+    <!-- Kalori durumu renkleri -->
+    <color name="calorie_ok">#388E3C</color>       <!-- yeşil: hedefe uyuldu -->
+    <color name="calorie_warning">#F57C00</color>  <!-- turuncu: %80+ doldu -->
+    <color name="calorie_exceeded">#C62828</color> <!-- kırmızı: limit aşıldı -->
+
+    <!-- Uyarı renkleri -->
+    <color name="warning_red">#C62828</color>
+    <color name="warning_bg">#FFEBEE</color>
+
+    <!-- Haftalık rapor -->
+    <color name="report_green">#4CAF50</color>
+    <color name="report_red">#F44336</color>
+    <color name="report_grey">#9E9E9E</color>
+
+    <!-- Progress bar track -->
+    <color name="progress_track">#E8F5E9</color>
+</resources>
