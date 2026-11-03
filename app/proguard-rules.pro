@@ -19,3 +19,7 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Keep Firestore & Room Entity models for reflection serialization/deserialization
+-keep class tr.edu.duzce.mf.bm.calorietrackingapp.database.entity.** { *; }
+-keep class tr.edu.duzce.mf.bm.calorietrackingapp.utils.GeminiFoodService$FoodAnalysisResult { *; }
