@@ -1,0 +1,17 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Shell scripts must have LF line endings
+*.sh text eol=lf
+gradlew text eol=lf
+
+# Windows batch scripts must have CRLF line endings
+*.bat text eol=crlf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.jar binary
+*.docx binary
