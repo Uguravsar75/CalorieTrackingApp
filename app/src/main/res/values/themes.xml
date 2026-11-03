@@ -8,8 +8,53 @@
         <item name="colorOnSecondary">@color/on_secondary</item>
         <item name="android:colorBackground">@color/background</item>
         <item name="colorSurface">@color/surface</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
         <item name="colorOnSurface">@color/on_surface</item>
+        <item name="colorOutline">@color/card_stroke</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.CalorieTrackingApp.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.CalorieTrackingApp.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.CalorieTrackingApp.Large</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
     <style name="Theme.CalorieTrackingApp" parent="Base.Theme.CalorieTrackingApp" />
+
+    <style name="Widget.CalorieTrackingApp.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/primary</item>
+        <item name="hintTextColor">@color/text_muted</item>
+        <item name="placeholderTextColor">@color/text_muted</item>
+    </style>
+
+    <style name="Widget.CalorieTrackingApp.DropdownTextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxStrokeColor">@color/primary</item>
+        <item name="hintTextColor">@color/text_muted</item>
+        <item name="placeholderTextColor">@color/text_muted</item>
+    </style>
+
+    <style name="Widget.CalorieTrackingApp.EditText" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <item name="android:textColor">@color/on_surface</item>
+        <item name="android:textColorHint">@color/text_muted</item>
+    </style>
+
+    <style name="ShapeAppearance.CalorieTrackingApp.Small" parent="ShapeAppearance.Material3.Corner.Small">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
+    </style>
+
+    <style name="ShapeAppearance.CalorieTrackingApp.Medium" parent="ShapeAppearance.Material3.Corner.Medium">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+    </style>
+
+    <style name="ShapeAppearance.CalorieTrackingApp.Large" parent="ShapeAppearance.Material3.Corner.Large">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">32dp</item>
+    </style>
+
+    <!-- Yemek fotoğrafı için daire kırpma -->
+    <style name="CircleImageView" parent="ShapeAppearance.Material3.Corner.None">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
 </resources>

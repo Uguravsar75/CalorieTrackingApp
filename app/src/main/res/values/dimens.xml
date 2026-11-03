@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Genel boşluklar -->
     <dimen name="spacing_small">8dp</dimen>
     <dimen name="spacing_medium">16dp</dimen>
     <dimen name="spacing_large">24dp</dimen>
     <dimen name="spacing_xlarge">32dp</dimen>
 
-    <!-- Kart ve bileşen boyutları -->
-    <dimen name="card_elevation">4dp</dimen>
-    <dimen name="card_corner_radius">12dp</dimen>
-    <dimen name="button_height">48dp</dimen>
+    <dimen name="card_elevation">0dp</dimen>
+    <dimen name="card_corner_radius">24dp</dimen>
+    <dimen name="button_height">56dp</dimen>
 
-    <!-- Progress bar -->
     <dimen name="progress_bar_height">12dp</dimen>
 
-    <!-- Metin boyutları -->
-    <dimen name="text_title">22sp</dimen>
+    <dimen name="text_title">26sp</dimen>
     <dimen name="text_headline">18sp</dimen>
     <dimen name="text_body">14sp</dimen>
     <dimen name="text_caption">12sp</dimen>
-
-    <!-- Kalori göstergesi büyük rakam -->
-    <dimen name="text_calorie_large">36sp</dimen>
+    <dimen name="text_calorie_large">34sp</dimen>
 </resources>

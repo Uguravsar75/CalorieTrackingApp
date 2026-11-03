@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorSurface">
+    android:background="@color/surface_tint_soft">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:elevation="0dp">
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:title="@string/title_food_search"
-            app:navigationIcon="@drawable/ic_launcher_foreground" />
+            android:titleTextColor="@color/on_surface" />
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:trackCornerRadius="0dp"
+            android:indeterminate="true" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
@@ -24,14 +32,32 @@
         android:padding="@dimen/spacing_medium"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_food_search"
+            android:textColor="@color/text_muted"
+            android:textSize="@dimen/text_caption"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="serif"
+            android:text="@string/hint_search_food"
+            android:textColor="@color/on_surface"
+            android:textSize="28sp" />
+
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.CalorieTrackingApp.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/hint_search_food"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-            android:layout_marginBottom="@dimen/spacing_small">
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:hint="@string/hint_search_food">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etSearch"
+                style="@style/Widget.CalorieTrackingApp.EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
@@ -41,7 +67,10 @@
             android:id="@+id/rvFoods"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/spacing_medium" />
 
     </LinearLayout>
 

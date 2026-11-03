@@ -4,49 +4,76 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="@dimen/spacing_medium"
-    android:layout_marginBottom="@dimen/spacing_small"
-    app:cardCornerRadius="@dimen/card_corner_radius"
-    app:cardElevation="@dimen/card_elevation">
+    android:layout_marginBottom="10dp"
+    app:cardBackgroundColor="?attr/colorSurface"
+    app:cardCornerRadius="22dp"
+    app:strokeColor="@color/card_stroke"
+    app:strokeWidth="1dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/spacing_medium">
+        android:padding="12dp">
 
-        <!-- Yemek adı -->
+        <!-- Yemek fotoğrafı — kamera veya internet'ten yüklenir -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivFoodPhoto"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/CircleImageView"
+            app:strokeColor="?attr/colorOutlineVariant"
+            app:strokeWidth="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/tvFoodName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/text_body"
-            android:textStyle="bold"
+            android:layout_marginStart="14dp"
             android:textColor="?attr/colorOnSurface"
+            android:textSize="15sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@id/tvCalories"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivFoodPhoto"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Öğün tipi ve miktar -->
         <TextView
             android:id="@+id/tvMealInfo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/text_caption"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="6dp"
+            android:alpha="0.72"
             android:textColor="?attr/colorOnSurface"
-            android:alpha="0.6"
-            android:layout_marginTop="@dimen/spacing_small"
+            android:textSize="@dimen/text_caption"
             app:layout_constraintEnd_toStartOf="@id/tvCalories"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivFoodPhoto"
             app:layout_constraintTop_toBottomOf="@id/tvFoodName" />
 
-        <!-- Kalori değeri -->
+        <TextView
+            android:id="@+id/tvMealMacroInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="4dp"
+            android:alpha="0.72"
+            android:textColor="?attr/colorOnSurface"
+            android:textSize="@dimen/text_caption"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/tvCalories"
+            app:layout_constraintStart_toEndOf="@id/ivFoodPhoto"
+            app:layout_constraintTop_toBottomOf="@id/tvMealInfo" />
+
         <TextView
             android:id="@+id/tvCalories"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="?attr/colorOnSurface"
             android:textSize="@dimen/text_headline"
             android:textStyle="bold"
-            android:textColor="?attr/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

@@ -1,225 +1,646 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorSurface">
+    android:background="@color/surface_tint_soft">
 
-    <!-- AppBar -->
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:elevation="0dp">
+
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:title="@string/title_main" />
+            android:contentInsetStartWithNavigation="0dp"
+            android:title=""
+            android:titleTextColor="@color/on_surface" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- İçerik -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="64dp"
         android:clipToPadding="false"
+        android:paddingBottom="140dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="@dimen/spacing_medium">
+            android:paddingStart="@dimen/spacing_medium"
+            android:paddingTop="4dp"
+            android:paddingEnd="@dimen/spacing_medium"
+            android:paddingBottom="@dimen/spacing_large">
 
-            <!-- Kalori Özet Kartı -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="4dp">
+
+                <TextView
+                    android:id="@+id/tvTodayDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dashboard_eyebrow_today"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_muted"
+                    android:textSize="@dimen/text_caption"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvMealPeriod"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="serif"
+                    android:textColor="@color/on_surface"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/tvTimezoneContext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/text_muted"
+                    android:textSize="@dimen/text_body" />
+            </LinearLayout>
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/spacing_medium"
-                app:cardCornerRadius="@dimen/card_corner_radius"
-                app:cardElevation="@dimen/card_elevation">
+                android:layout_marginTop="@dimen/spacing_medium"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="30dp"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="1dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="@dimen/spacing_medium">
+                    android:padding="@dimen/spacing_large">
+
+                    <TextView
+                        android:id="@+id/tvSmartInsight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_muted"
+                        android:textSize="@dimen/text_body" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="@dimen/spacing_medium">
+                        android:layout_marginTop="@dimen/spacing_large"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:layout_width="136dp"
+                            android:layout_height="136dp">
+
+                            <com.google.android.material.progressindicator.CircularProgressIndicator
+                                android:id="@+id/progressCalorie"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:indeterminate="false"
+                                android:max="100"
+                                android:progress="0"
+                                app:indicatorColor="@color/on_surface"
+                                app:indicatorInset="2dp"
+                                app:indicatorSize="132dp"
+                                app:indicatorTrackGapSize="0dp"
+                                app:trackColor="@color/progress_track"
+                                app:trackThickness="12dp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/label_remaining"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/text_muted"
+                                    android:textSize="10sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tvProgressPercent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:textColor="@color/on_surface"
+                                    android:textSize="28sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="@string/label_filled"
+                                    android:textColor="@color/text_muted"
+                                    android:textSize="11sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="@string/label_kcal"
+                                    android:textColor="@color/text_muted"
+                                    android:textSize="@dimen/text_caption" />
+                            </LinearLayout>
+                        </FrameLayout>
 
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_large"
                             android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:gravity="center">
-                            <TextView
-                                android:id="@+id/tvGoal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="0"
-                                android:textSize="@dimen/text_calorie_large"
-                                android:textStyle="bold"
-                                android:textColor="?attr/colorPrimary" />
+                            android:orientation="vertical">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/label_daily_goal"
-                                android:textSize="@dimen/text_caption"
-                                android:textColor="?attr/colorOnSurface"
-                                android:alpha="0.6" />
-                        </LinearLayout>
+                                android:textColor="@color/text_muted"
+                                android:textSize="@dimen/text_caption" />
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:gravity="center">
+                            <TextView
+                                android:id="@+id/tvGoal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:textColor="@color/on_surface"
+                                android:textSize="28sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="14dp"
+                                android:text="@string/label_consumed"
+                                android:textColor="@color/text_muted"
+                                android:textSize="@dimen/text_caption" />
+
                             <TextView
                                 android:id="@+id/tvConsumed"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="0"
-                                android:textSize="@dimen/text_calorie_large"
-                                android:textStyle="bold"
-                                android:textColor="@color/calorie_ok" />
+                                android:layout_marginTop="4dp"
+                                android:textColor="@color/on_surface"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/label_consumed"
-                                android:textSize="@dimen/text_caption"
-                                android:textColor="?attr/colorOnSurface"
-                                android:alpha="0.6" />
-                        </LinearLayout>
+                                android:layout_marginTop="14dp"
+                                android:text="@string/label_remaining"
+                                android:textColor="@color/text_muted"
+                                android:textSize="@dimen/text_caption" />
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical"
-                            android:gravity="center">
                             <TextView
                                 android:id="@+id/tvRemaining"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="0"
-                                android:textSize="@dimen/text_calorie_large"
-                                android:textStyle="bold"
-                                android:textColor="?attr/colorSecondary" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/label_remaining"
-                                android:textSize="@dimen/text_caption"
-                                android:textColor="?attr/colorOnSurface"
-                                android:alpha="0.6" />
+                                android:layout_marginTop="4dp"
+                                android:textColor="@color/calorie_warning"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
                         </LinearLayout>
-
                     </LinearLayout>
-
-                    <com.google.android.material.progressindicator.LinearProgressIndicator
-                        android:id="@+id/progressCalorie"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/progress_bar_height"
-                        android:indeterminate="false"
-                        android:progress="0"
-                        app:trackCornerRadius="6dp" />
-
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Limit aşımı uyarı kartı -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:paddingHorizontal="4dp"
+                android:text="@string/dashboard_manual_stats_hint"
+                android:textColor="@color/text_muted"
+                android:textSize="@dimen/text_caption" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/mint_soft"
+                    app:cardCornerRadius="22dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dashboard_water_title"
+                            android:textColor="@color/text_muted"
+                            android:textSize="@dimen/text_caption" />
+
+                        <TextView
+                            android:id="@+id/tvWaterValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:textColor="@color/on_surface"
+                            android:textSize="@dimen/text_headline"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="1dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/yellow_soft"
+                    app:cardCornerRadius="22dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dashboard_steps_title"
+                            android:textColor="@color/text_muted"
+                            android:textSize="@dimen/text_caption" />
+
+                        <TextView
+                            android:id="@+id/tvStepsValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:textColor="@color/on_surface"
+                            android:textSize="@dimen/text_headline"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="1dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/orange_soft"
+                    app:cardCornerRadius="22dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dashboard_exercise_title"
+                            android:textColor="@color/text_muted"
+                            android:textSize="@dimen/text_caption" />
+
+                        <TextView
+                            android:id="@+id/tvExerciseValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:textColor="@color/on_surface"
+                            android:textSize="@dimen/text_headline"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="28dp"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_large">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/dashboard_profile_snapshot"
+                            android:textColor="@color/on_surface"
+                            android:textSize="@dimen/text_headline"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnWeeklyReport"
+                            style="@style/Widget.Material3.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/btn_weekly_report"
+                            android:textAllCaps="false" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:orientation="horizontal">
+
+                        <include layout="@layout/item_dashboard_meal_stat" />
+                        <include layout="@layout/item_dashboard_meal_stat" />
+                        <include layout="@layout/item_dashboard_meal_stat" />
+                        <include layout="@layout/item_dashboard_meal_stat" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvBreakfastCount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/on_surface"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvLunchCount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/on_surface"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvDinnerCount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/on_surface"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvSnackCount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/on_surface"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/label_meal_breakfast"
+                            android:textColor="@color/text_muted"
+                            android:textSize="@dimen/text_caption" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/label_meal_lunch"
+                            android:textColor="@color/text_muted"
+                            android:textSize="@dimen/text_caption" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/label_meal_dinner"
+                            android:textColor="@color/text_muted"
+                            android:textSize="@dimen/text_caption" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/label_meal_snack"
+                            android:textColor="@color/text_muted"
+                            android:textSize="@dimen/text_caption" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardWarning"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/spacing_medium"
+                android:layout_marginTop="@dimen/spacing_medium"
                 android:visibility="gone"
                 app:cardBackgroundColor="@color/warning_bg"
-                app:cardCornerRadius="@dimen/card_corner_radius"
-                app:strokeColor="@color/warning_red"
+                app:cardCornerRadius="22dp"
+                app:strokeColor="#F5CEC4"
                 app:strokeWidth="1dp">
+
                 <TextView
+                    android:id="@+id/tvWarningText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/spacing_medium"
-                    android:text="@string/warning_limit_exceeded"
                     android:textColor="@color/warning_red"
-                    android:textStyle="bold"
-                    android:gravity="center" />
+                    android:textStyle="bold" />
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Bugünkü Öğünler -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/label_todays_meals"
-                android:textSize="@dimen/text_headline"
-                android:textStyle="bold"
-                android:layout_marginBottom="@dimen/spacing_small" />
-
-            <TextView
-                android:id="@+id/tvNoMeals"
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/label_no_meals"
-                android:textSize="@dimen/text_body"
-                android:textColor="?attr/colorOnSurface"
-                android:alpha="0.5"
-                android:gravity="center"
                 android:layout_marginTop="@dimen/spacing_medium"
-                android:visibility="gone" />
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="28dp"
+                app:strokeColor="@color/primary"
+                app:strokeWidth="1dp">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvMealEntries"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_large">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dashboard_ai_title"
+                        android:textColor="@color/primary"
+                        android:textSize="@dimen/text_caption"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvHealthyAlternative"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="serif"
+                        android:textColor="@color/on_surface"
+                        android:textSize="28sp" />
+
+                    <TextView
+                        android:id="@+id/tvDiseaseNote"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/text_muted"
+                        android:textSize="@dimen/text_body" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipSuggestions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        app:singleLine="false" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAddSuggestedMeal"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="@string/btn_add_meal"
+                        android:textAllCaps="false"
+                        app:strokeColor="@color/primary" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false" />
+                android:layout_marginTop="@dimen/spacing_medium"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="28dp"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="1dp">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnAddMeal"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/button_height"
-                android:text="@string/btn_add_meal"
-                android:textAllCaps="false"
-                android:layout_marginTop="@dimen/spacing_medium" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_large">
 
-            <!-- Kamera ile fotoğraf çekip AI ile tanıma -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnCamera"
-                style="@style/Widget.Material3.Button.TonalButton"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/button_height"
-                android:text="📷 Fotoğrafla Kalori Tanı"
-                android:textAllCaps="false"
-                android:layout_marginTop="@dimen/spacing_small" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnWeeklyReport"
-                style="@style/Widget.Material3.Button.OutlinedButton"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/button_height"
-                android:text="@string/btn_weekly_report"
-                android:textAllCaps="false"
-                android:layout_marginTop="@dimen/spacing_small"
-                android:layout_marginBottom="@dimen/spacing_large" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/label_todays_meals"
+                            android:textColor="@color/on_surface"
+                            android:textSize="@dimen/text_headline"
+                            android:textStyle="bold" />
 
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnCamera"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/btn_camera_scan"
+                            android:textAllCaps="false" />
+                    </LinearLayout>
 
+                    <TextView
+                        android:id="@+id/tvNoMeals"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:gravity="center"
+                        android:text="@string/label_no_meals"
+                        android:textColor="@color/text_muted"
+                        android:visibility="gone" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvMealEntries"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:nestedScrollingEnabled="false" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <!-- Alt Navigasyon Çubuğu -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddMeal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="68dp"
+        android:contentDescription="@string/btn_add_meal"
+        android:src="@android:drawable/ic_input_add"
+        app:fabCustomSize="62dp" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:backgroundTint="@color/secondary"
+        android:minHeight="82dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="0dp"
+        app:itemIconTint="@color/bottom_nav_colors"
+        app:itemTextColor="@color/bottom_nav_colors"
+        app:labelVisibilityMode="labeled"
+        app:itemActiveIndicatorStyle="@null"
         app:menu="@menu/menu_bottom_nav" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

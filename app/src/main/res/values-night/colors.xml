@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Brand — primary aynı kalır, dark modda da tanınabilir -->
+    <color name="primary">#B8FF3C</color>
+    <color name="primary_variant">#95D425</color>
+    <color name="on_primary">#0A0A0A</color>
+
+    <!-- Nav bar — dark modda da koyu (marka tutarlılığı) -->
+    <color name="secondary">#161616</color>
+    <color name="on_secondary">#FAFAF7</color>
+
+    <!-- Yüzeyler -->
+    <color name="background">#0A0A0A</color>
+    <color name="surface">#161616</color>
+    <color name="surface_variant">#1E1E1E</color>
+    <color name="on_surface">#F0F0ED</color>
+    <color name="surface_tint_soft">#111111</color>
+
+    <!-- Metin -->
+    <color name="text_muted">#8A8A8A</color>
+
+    <!-- Kart çerçevesi -->
+    <color name="card_stroke">#2A2A2A</color>
+
+    <!-- Kalori durumu — dark modda daha parlak -->
+    <color name="calorie_ok">#4CAF50</color>
+    <color name="calorie_warning">#FFB74D</color>
+    <color name="calorie_exceeded">#EF5350</color>
+
+    <!-- Uyarı -->
+    <color name="warning_red">#FF8A80</color>
+    <color name="warning_bg">#2C1210</color>
+
+    <!-- Hero kart -->
+    <color name="hero_background">#161616</color>
+    <color name="hero_text">#FAFAF7</color>
+    <color name="hero_text_muted">#A8A89E</color>
+
+    <!-- Soft kart arka planları — koyu tonda ama belirgin tint -->
+    <color name="mint_soft">#142B1C</color>
+    <color name="orange_soft">#2B1C10</color>
+    <color name="yellow_soft">#2B2710</color>
+    <color name="coral_soft">#2B1510</color>
+
+    <!-- Navigasyon -->
+    <color name="nav_icon_idle">#5A5A5A</color>
+    <color name="nav_indicator">#B8FF3C</color>
+
+    <!-- Rapor -->
+    <color name="report_green">#4CAF50</color>
+    <color name="report_red">#EF5350</color>
+    <color name="report_yellow">#FFB74D</color>
+    <color name="report_grey">#9E9E9E</color>
+
+    <!-- Progress -->
+    <color name="progress_track">#2A2A2A</color>
+
+    <!-- Ters metin (koyu arka plan ustu — her zaman acik) -->
+    <color name="ink_inverse">#FAFAF7</color>
+</resources>

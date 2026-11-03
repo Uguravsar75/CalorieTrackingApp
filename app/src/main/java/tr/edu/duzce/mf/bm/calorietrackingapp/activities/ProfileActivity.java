@@ -11,10 +11,15 @@ import androidx.core.content.ContextCompat;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import tr.edu.duzce.mf.bm.calorietrackingapp.R;
 import tr.edu.duzce.mf.bm.calorietrackingapp.database.AppDatabase;
 import tr.edu.duzce.mf.bm.calorietrackingapp.database.entity.User;
 import tr.edu.duzce.mf.bm.calorietrackingapp.repository.AppRepository;
+import tr.edu.duzce.mf.bm.calorietrackingapp.utils.SyncStatusManager;
 
 /**
  * ProfileActivity: Kullanıcı profil bilgilerini görüntüler.
@@ -24,14 +29,16 @@ import tr.edu.duzce.mf.bm.calorietrackingapp.repository.AppRepository;
 public class ProfileActivity extends AppCompatActivity {
 
     private TextView tvAvatar, tvProfileName, tvProfileSubtitle;
-    private TextView tvAge, tvGender, tvHeight, tvWeight;
+    private TextView tvAge, tvGender, tvHeight, tvWeight, tvActivity;
     private TextView tvBmiValue, tvBmiLabel;
-    private TextView tvDisease, tvCalorieGoal;
+    private TextView tvDisease, tvCalorieGoal, tvTimezone, tvSyncStatus, tvSyncDetails, tvOtherDiseases;
+    private SyncStatusManager syncStatusManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        syncStatusManager = new SyncStatusManager(this);
 
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -60,10 +67,15 @@ public class ProfileActivity extends AppCompatActivity {
         tvGender = findViewById(R.id.tvGender);
         tvHeight = findViewById(R.id.tvHeight);
         tvWeight = findViewById(R.id.tvWeight);
+        tvActivity = findViewById(R.id.tvActivity);
         tvBmiValue = findViewById(R.id.tvBmiValue);
         tvBmiLabel = findViewById(R.id.tvBmiLabel);
         tvDisease = findViewById(R.id.tvDisease);
         tvCalorieGoal = findViewById(R.id.tvCalorieGoal);
+        tvTimezone = findViewById(R.id.tvTimezone);
+        tvSyncStatus = findViewById(R.id.tvSyncStatus);
+        tvSyncDetails = findViewById(R.id.tvSyncDetails);
+        tvOtherDiseases = findViewById(R.id.tvOtherDiseases);
     }
 
     private void loadProfile() {
@@ -85,14 +97,15 @@ public class ProfileActivity extends AppCompatActivity {
         String genderLabel = "MALE".equals(user.getGender())
                 ? getString(R.string.gender_male)
                 : getString(R.string.gender_female);
-        tvProfileSubtitle.setText(genderLabel + " • " + user.getAge() + " " +
-                getString(R.string.profile_label_age).toLowerCase());
+        tvProfileSubtitle.setText(getString(R.string.profile_subtitle_format,
+                genderLabel, user.getAge(), getString(R.string.unit_years)));
 
         // Fiziksel bilgiler
-        tvAge.setText(user.getAge() + " yaş");
+        tvAge.setText(getString(R.string.profile_value_age_format, user.getAge(), getString(R.string.unit_years)));
         tvGender.setText(genderLabel);
-        tvHeight.setText((int) user.getHeight() + " " + getString(R.string.unit_cm));
-        tvWeight.setText((int) user.getWeight() + " " + getString(R.string.unit_kg));
+        tvHeight.setText(getString(R.string.profile_value_cm_format, (int) user.getHeight(), getString(R.string.unit_cm)));
+        tvWeight.setText(getString(R.string.profile_value_kg_format, (int) user.getWeight(), getString(R.string.unit_kg)));
+        tvActivity.setText(getActivityLabel(user.getActivityLevel()));
 
         // VKİ hesapla: kilo / (boy_m)^2
         float heightM = user.getHeight() / 100f;
@@ -101,8 +114,35 @@ public class ProfileActivity extends AppCompatActivity {
         setBmiLabel(bmi);
 
         // Sağlık bilgileri
-        tvDisease.setText(getDiseaseLabel(user.getDiseaseType()));
-        tvCalorieGoal.setText(user.getDailyCalorieGoal() + " " + getString(R.string.unit_kcal_day));
+        tvDisease.setText(getHealthSummary(user));
+        tvCalorieGoal.setText(getString(R.string.profile_value_kcal_format,
+                user.getDailyCalorieGoal(), getString(R.string.unit_kcal_day)));
+        tvTimezone.setText(user.getTimezoneId() != null ? user.getTimezoneId() : "-");
+        bindSyncStatus();
+        tvOtherDiseases.setText(user.getOtherDiseases() == null || user.getOtherDiseases().trim().isEmpty()
+                ? getString(R.string.disease_none)
+                : user.getOtherDiseases());
+    }
+
+    private void bindSyncStatus() {
+        if (syncStatusManager.hasError()) {
+            String errorText = getString(R.string.sync_error_format, syncStatusManager.getLastError());
+            tvSyncStatus.setText(errorText);
+            tvSyncDetails.setText(errorText);
+            return;
+        }
+
+        long lastSuccessAt = syncStatusManager.getLastSuccessAt();
+        if (lastSuccessAt > 0) {
+            String formatted = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault())
+                    .format(new Date(lastSuccessAt));
+            String statusText = getString(R.string.sync_last_success_format, formatted);
+            tvSyncStatus.setText(statusText);
+            tvSyncDetails.setText(statusText);
+        } else {
+            tvSyncStatus.setText(R.string.sync_pending);
+            tvSyncDetails.setText(R.string.sync_pending);
+        }
     }
 
     private void setBmiLabel(float bmi) {
@@ -139,9 +179,26 @@ public class ProfileActivity extends AppCompatActivity {
         switch (diseaseType) {
             case "DIABETES":     return getString(R.string.disease_diabetes);
             case "HYPERTENSION": return getString(R.string.disease_hypertension);
+            case "OTHER":        return getString(R.string.label_other_conditions);
             case "HEART":        return getString(R.string.disease_heart);
             default:             return getString(R.string.disease_none);
         }
+    }
+
+    private String getActivityLabel(String activityLevel) {
+        if ("LOW".equals(activityLevel)) return getString(R.string.activity_low);
+        if ("HIGH".equals(activityLevel)) return getString(R.string.activity_high);
+        if ("VERY_HIGH".equals(activityLevel)) return getString(R.string.activity_very_high);
+        return getString(R.string.activity_moderate);
+    }
+
+    private String getHealthSummary(User user) {
+        StringBuilder builder = new StringBuilder();
+        if (user.isHasDiabetes()) builder.append(getString(R.string.disease_diabetes)).append(" • ");
+        if (user.isHasHypertension()) builder.append(getString(R.string.disease_hypertension)).append(" • ");
+        if (user.isHasCholesterol()) builder.append(getString(R.string.label_cholesterol)).append(" • ");
+        if (builder.length() == 0) return getDiseaseLabel(user.getDiseaseType());
+        return builder.substring(0, builder.length() - 3);
     }
 
     private String getInitials(String name) {

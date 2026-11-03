@@ -18,8 +18,16 @@ public class User {
     private String gender;       // "MALE" veya "FEMALE"
     private float height;        // cm
     private float weight;        // kg
+    private String activityLevel;
     private String diseaseType;  // "NONE", "DIABETES", "HYPERTENSION", "HEART"
+    private boolean hasDiabetes;
+    private boolean hasHypertension;
+    private boolean hasCholesterol;
+    private String otherDiseases;
     private int dailyCalorieGoal;
+    private String authProvider;
+    private String timezoneId;
+    private long lastSyncedAt;
 
     public User() {}
 
@@ -49,9 +57,33 @@ public class User {
     public float getWeight() { return weight; }
     public void setWeight(float weight) { this.weight = weight; }
 
+    public String getActivityLevel() { return activityLevel; }
+    public void setActivityLevel(String activityLevel) { this.activityLevel = activityLevel; }
+
     public String getDiseaseType() { return diseaseType; }
     public void setDiseaseType(String diseaseType) { this.diseaseType = diseaseType; }
 
+    public boolean isHasDiabetes() { return hasDiabetes; }
+    public void setHasDiabetes(boolean hasDiabetes) { this.hasDiabetes = hasDiabetes; }
+
+    public boolean isHasHypertension() { return hasHypertension; }
+    public void setHasHypertension(boolean hasHypertension) { this.hasHypertension = hasHypertension; }
+
+    public boolean isHasCholesterol() { return hasCholesterol; }
+    public void setHasCholesterol(boolean hasCholesterol) { this.hasCholesterol = hasCholesterol; }
+
+    public String getOtherDiseases() { return otherDiseases; }
+    public void setOtherDiseases(String otherDiseases) { this.otherDiseases = otherDiseases; }
+
     public int getDailyCalorieGoal() { return dailyCalorieGoal; }
     public void setDailyCalorieGoal(int dailyCalorieGoal) { this.dailyCalorieGoal = dailyCalorieGoal; }
+
+    public String getAuthProvider() { return authProvider; }
+    public void setAuthProvider(String authProvider) { this.authProvider = authProvider; }
+
+    public String getTimezoneId() { return timezoneId; }
+    public void setTimezoneId(String timezoneId) { this.timezoneId = timezoneId; }
+
+    public long getLastSyncedAt() { return lastSyncedAt; }
+    public void setLastSyncedAt(long lastSyncedAt) { this.lastSyncedAt = lastSyncedAt; }
 }

@@ -31,4 +31,7 @@ public interface FoodDao {
 
     @Query("SELECT COUNT(*) FROM foods WHERE isPredefined = 1")
     int getPredefinedFoodCount();
+
+    @Query("DELETE FROM foods WHERE isPredefined = 1")
+    void deleteAllPredefined();
 }

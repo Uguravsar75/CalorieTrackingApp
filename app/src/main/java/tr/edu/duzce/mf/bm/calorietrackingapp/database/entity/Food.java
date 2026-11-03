@@ -16,6 +16,9 @@ public class Food {
     private boolean isPredefined;   // Ön tanımlı gıda mı
     private boolean sugarWarning;   // Diyabet uyarısı gerekli mi (şekerli)
 
+    private boolean saltWarning;
+    private boolean fatWarning;
+
     public Food() {}
 
     // --- Getter ve Setter ---
@@ -40,4 +43,10 @@ public class Food {
 
     public boolean isSugarWarning() { return sugarWarning; }
     public void setSugarWarning(boolean sugarWarning) { this.sugarWarning = sugarWarning; }
+
+    public boolean isSaltWarning() { return saltWarning; }
+    public void setSaltWarning(boolean saltWarning) { this.saltWarning = saltWarning; }
+
+    public boolean isFatWarning() { return fatWarning; }
+    public void setFatWarning(boolean fatWarning) { this.fatWarning = fatWarning; }
 }

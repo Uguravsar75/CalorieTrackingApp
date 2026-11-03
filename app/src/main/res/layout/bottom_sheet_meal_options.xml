@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="32dp">
+
+    <!-- Sürükleme göstergesi -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="20dp"
+        android:background="#40808080"
+        android:backgroundTint="?colorOnSurfaceVariant" />
+
+    <!-- Yemek adı -->
+    <TextView
+        android:id="@+id/tvBottomSheetTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="?colorOnSurface"
+        android:maxLines="2"
+        android:ellipsize="end" />
+
+    <!-- Alt bilgi: kalori ve öğün türü -->
+    <TextView
+        android:id="@+id/tvBottomSheetSubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="4dp"
+        android:textSize="13sp"
+        android:textColor="@color/text_muted" />
+
+    <!-- Ayırıcı çizgi -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/card_stroke" />
+
+    <!-- Düzenle butonu -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBottomSheetEdit"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/btn_edit_meal"
+        android:textSize="15sp"
+        app:strokeColor="?colorPrimary" />
+
+    <!-- Sil butonu -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBottomSheetDelete"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginHorizontal="16dp"
+        android:text="@string/btn_delete"
+        android:textSize="15sp"
+        android:textColor="@color/warning_red" />
+
+</LinearLayout>

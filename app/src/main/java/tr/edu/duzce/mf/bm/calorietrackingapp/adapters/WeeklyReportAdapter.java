@@ -1,14 +1,12 @@
 package tr.edu.duzce.mf.bm.calorietrackingapp.adapters;
 
 import android.content.Context;
-import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -23,6 +21,8 @@ public class WeeklyReportAdapter extends RecyclerView.Adapter<WeeklyReportAdapte
         public int consumed;
         public int goal;
         public boolean hasData;
+        public boolean adherent;
+        public int streakCount;
     }
 
     private final Context context;
@@ -51,33 +51,27 @@ public class WeeklyReportAdapter extends RecyclerView.Adapter<WeeklyReportAdapte
         ReportItem item = items.get(position);
 
         holder.tvReportDate.setText(DateUtils.toDisplayFormat(item.date));
+        holder.tvReportGoal.setText(String.valueOf(item.goal));
 
         if (!item.hasData) {
-            holder.tvReportCalories.setText(context.getString(R.string.label_report_no_data));
-            holder.tvReportStatus.setText("—");
-            setStatusColor(holder.tvReportStatus, R.color.report_grey);
+            holder.tvReportConsumed.setText(context.getString(R.string.label_report_no_data));
+            holder.tvReportStatus.setText(context.getString(R.string.report_status_empty));
+            holder.tvReportStreak.setText(context.getString(R.string.report_streak_empty));
             return;
         }
 
-        holder.tvReportCalories.setText(item.consumed + " / " + item.goal + " kcal");
+        holder.tvReportConsumed.setText(String.valueOf(item.consumed));
+        holder.tvReportStreak.setText(item.adherent
+                ? repeatFire(item.streakCount)
+                : context.getString(R.string.report_streak_break));
 
-        if (item.consumed <= item.goal) {
+        if (item.consumed <= item.goal * 0.9f) {
             holder.tvReportStatus.setText(context.getString(R.string.label_report_goal_met));
-            setStatusColor(holder.tvReportStatus, R.color.report_green);
+        } else if (item.consumed <= item.goal) {
+            holder.tvReportStatus.setText(context.getString(R.string.label_report_goal_close));
         } else {
             holder.tvReportStatus.setText(context.getString(R.string.label_report_goal_exceeded));
-            setStatusColor(holder.tvReportStatus, R.color.report_red);
         }
-    }
-
-    private void setStatusColor(TextView tv, int colorResId) {
-        GradientDrawable bg = (GradientDrawable) ContextCompat.getDrawable(context, R.drawable.bg_report_status);
-        if (bg != null) {
-            bg = (GradientDrawable) bg.mutate();
-            bg.setColor(ContextCompat.getColor(context, colorResId));
-            tv.setBackground(bg);
-        }
-        tv.setTextColor(ContextCompat.getColor(context, R.color.white));
     }
 
     @Override
@@ -85,14 +79,25 @@ public class WeeklyReportAdapter extends RecyclerView.Adapter<WeeklyReportAdapte
         return items != null ? items.size() : 0;
     }
 
+    private String repeatFire(int streakCount) {
+        int count = Math.max(1, Math.min(streakCount, 5));
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < count; i++) {
+            builder.append("🔥");
+        }
+        return builder.toString();
+    }
+
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvReportDate, tvReportCalories, tvReportStatus;
+        TextView tvReportDate, tvReportConsumed, tvReportGoal, tvReportStatus, tvReportStreak;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvReportDate = itemView.findViewById(R.id.tvReportDate);
-            tvReportCalories = itemView.findViewById(R.id.tvReportCalories);
+            tvReportConsumed = itemView.findViewById(R.id.tvReportConsumed);
+            tvReportGoal = itemView.findViewById(R.id.tvReportGoal);
             tvReportStatus = itemView.findViewById(R.id.tvReportStatus);
+            tvReportStreak = itemView.findViewById(R.id.tvReportStreak);
         }
     }
 }

@@ -11,19 +11,24 @@ import java.util.Locale;
  */
 public class DateUtils {
 
-    private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-    private static final SimpleDateFormat DISPLAY_FORMAT = new SimpleDateFormat("dd MMMM yyyy", new Locale("tr"));
+    // SimpleDateFormat thread-safe değil → ThreadLocal ile güvenli hale getirildi
+    private static final ThreadLocal<SimpleDateFormat> DATE_FORMAT_HOLDER =
+            ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()));
+
+    private static SimpleDateFormat getDateFormat() {
+        return DATE_FORMAT_HOLDER.get();
+    }
 
     /** Bugünün tarihini "yyyy-MM-dd" formatında döner. */
     public static String getToday() {
-        return DATE_FORMAT.format(new Date());
+        return getDateFormat().format(new Date());
     }
 
     /** N gün öncesinin tarihini "yyyy-MM-dd" formatında döner. */
     public static String getDaysAgo(int days) {
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.DAY_OF_YEAR, -days);
-        return DATE_FORMAT.format(cal.getTime());
+        return getDateFormat().format(cal.getTime());
     }
 
     /**
@@ -44,8 +49,10 @@ public class DateUtils {
     /** "yyyy-MM-dd" formatındaki tarihi kullanıcı dostu formata çevirir. */
     public static String toDisplayFormat(String dateStr) {
         try {
-            Date date = DATE_FORMAT.parse(dateStr);
-            return date != null ? DISPLAY_FORMAT.format(date) : dateStr;
+            Date date = getDateFormat().parse(dateStr);
+            if (date == null) return dateStr;
+            SimpleDateFormat displayFormat = new SimpleDateFormat("dd MMMM yyyy", Locale.getDefault());
+            return displayFormat.format(date);
         } catch (Exception e) {
             return dateStr;
         }

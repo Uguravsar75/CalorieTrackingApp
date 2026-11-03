@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorSurface">
+    android:background="@color/surface_tint_soft">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,44 +11,86 @@
         android:orientation="vertical"
         android:padding="@dimen/spacing_large">
 
-        <!-- Başlık -->
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:text="@string/title_camera"
-            android:textColor="?attr/colorPrimary"
-            android:textSize="@dimen/text_title"
+            android:textColor="@color/text_muted"
+            android:textSize="@dimen/text_caption"
             android:textStyle="bold" />
 
-        <!-- Fotoğraf önizleme -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="serif"
+            android:text="@string/camera_subtitle"
+            android:textColor="@color/on_surface"
+            android:textSize="28sp" />
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardPreview"
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="320dp"
             android:layout_marginTop="@dimen/spacing_large"
-            app:cardCornerRadius="@dimen/card_corner_radius">
+            app:cardCornerRadius="32dp"
+            app:strokeColor="@color/card_stroke"
+            app:strokeWidth="1dp">
 
-            <ImageView
-                android:id="@+id/ivPhoto"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/progress_track"
-                android:contentDescription="@string/title_camera"
-                android:scaleType="centerCrop" />
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/on_surface"
+                    android:contentDescription="@string/title_camera"
+                    android:scaleType="centerCrop" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="26dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_camera_overlay" />
+                </FrameLayout>
+            </FrameLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Fotoğraf çek butonu -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnTakePhoto"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/button_height"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_large"
-            android:text="@string/btn_take_photo"
-            android:textAllCaps="false" />
+            android:orientation="horizontal">
 
-        <!-- Analiz yükleniyor -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTakePhoto"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_weight="1"
+                android:text="@string/btn_take_photo"
+                android:textAllCaps="false" />
+
+            <Space
+                android:layout_width="@dimen/spacing_small"
+                android:layout_height="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPickFromGallery"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_weight="1"
+                android:text="@string/btn_pick_from_gallery"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
         <com.google.android.material.progressindicator.CircularProgressIndicator
             android:id="@+id/progressAnalyzing"
             android:layout_width="wrap_content"
@@ -59,74 +100,134 @@
             android:indeterminate="true"
             android:visibility="gone" />
 
-        <!-- Sonuç kartı (yemek adı + kalori düzenlenebilir) -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardResult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_large"
             android:visibility="gone"
-            app:cardCornerRadius="@dimen/card_corner_radius">
+            app:cardBackgroundColor="?attr/colorSurface"
+            app:cardCornerRadius="28dp"
+            app:strokeColor="@color/card_stroke"
+            app:strokeWidth="1dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="@dimen/spacing_medium">
+                android:padding="@dimen/spacing_large">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="🍽 Gemini Sonucu"
-                    android:textColor="?attr/colorPrimary"
-                    android:textSize="14sp"
+                    android:text="@string/camera_ai_result"
+                    android:textColor="@color/text_muted"
                     android:textStyle="bold" />
 
-                <!-- Yemek adı -->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tilFoodName"
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                <TextView
+                    android:id="@+id/tvEstimateNote"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/spacing_small"
-                    android:hint="Yemek adı">
+                    android:layout_marginTop="6dp"
+                    android:text="@string/camera_estimated_note"
+                    android:textColor="@color/text_muted"
+                    android:textSize="@dimen/text_caption" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilFoodName"
+                    style="@style/Widget.CalorieTrackingApp.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:hint="@string/camera_food_name">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etFoodName"
+                        style="@style/Widget.CalorieTrackingApp.EditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textCapSentences"
-                        android:maxLines="2" />
+                        android:inputType="textCapSentences" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Kalori -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilCalories"
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    style="@style/Widget.CalorieTrackingApp.TextInputLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/spacing_small"
-                    android:hint="Tahmini kalori (kcal)"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:hint="@string/camera_calorie_estimate"
                     app:suffixText="kcal">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etCalories"
+                        style="@style/Widget.CalorieTrackingApp.EditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="number" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="Sonucu düzenleyebilir, ardından onaylayabilirsiniz."
-                    android:textColor="?attr/colorOnSurfaceVariant"
-                    android:textSize="12sp" />
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/mint_soft"
+                        app:cardCornerRadius="18dp">
+                        <TextView
+                            android:id="@+id/tvProtein"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/spacing_medium"
+                            android:text="@string/camera_macro_protein"
+                            android:textColor="@color/on_surface" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <Space
+                        android:layout_width="@dimen/spacing_small"
+                        android:layout_height="1dp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/yellow_soft"
+                        app:cardCornerRadius="18dp">
+                        <TextView
+                            android:id="@+id/tvCarb"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/spacing_medium"
+                            android:text="@string/camera_macro_carb"
+                            android:textColor="@color/on_surface" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <Space
+                        android:layout_width="@dimen/spacing_small"
+                        android:layout_height="1dp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/orange_soft"
+                        app:cardCornerRadius="18dp">
+                        <TextView
+                            android:id="@+id/tvFat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/spacing_medium"
+                            android:text="@string/camera_macro_fat"
+                            android:textColor="@color/on_surface" />
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Onayla ve Ekle -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnConfirm"
             android:layout_width="match_parent"
@@ -135,6 +236,5 @@
             android:text="@string/btn_confirm_food"
             android:textAllCaps="false"
             android:visibility="gone" />
-
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

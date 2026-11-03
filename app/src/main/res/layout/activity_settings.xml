@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorSurface">
+    android:background="@color/surface_tint_soft">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:elevation="0dp">
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -27,26 +28,21 @@
             android:orientation="vertical"
             android:padding="@dimen/spacing_medium">
 
-            <!-- ── PROFİL BÖLÜMÜ ── -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/settings_section_profile"
-                android:textSize="12sp"
-                android:textColor="?attr/colorPrimary"
-                android:textStyle="bold"
-                android:letterSpacing="0.08"
-                android:layout_marginTop="@dimen/spacing_small"
-                android:layout_marginBottom="@dimen/spacing_small"
-                android:paddingHorizontal="@dimen/spacing_small" />
+                android:textColor="@color/text_muted"
+                android:textStyle="bold" />
 
-            <!-- Kullanıcı özeti kartı -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/spacing_medium"
-                app:cardCornerRadius="@dimen/card_corner_radius"
-                app:cardElevation="@dimen/card_elevation">
+                android:layout_marginTop="@dimen/spacing_small"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="28dp"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="1dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -58,19 +54,18 @@
                         android:id="@+id/tvProfileName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/on_surface"
                         android:textSize="@dimen/text_headline"
-                        android:textStyle="bold"
-                        android:textColor="?attr/colorOnSurface" />
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tvProfileDetails"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/text_caption"
-                        android:textColor="?attr/colorOnSurface"
-                        android:alpha="0.6"
                         android:layout_marginTop="2dp"
-                        android:layout_marginBottom="@dimen/spacing_medium" />
+                        android:layout_marginBottom="@dimen/spacing_medium"
+                        android:textColor="@color/text_muted"
+                        android:textSize="@dimen/text_caption" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnEditProfile"
@@ -79,27 +74,34 @@
                         android:layout_height="wrap_content"
                         android:text="@string/settings_edit_profile"
                         android:textAllCaps="false" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnChangePassword"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/settings_change_password"
+                        android:textAllCaps="false" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- ── GÖRÜNÜM BÖLÜMÜ ── -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
                 android:text="@string/settings_section_appearance"
-                android:textSize="12sp"
-                android:textColor="?attr/colorPrimary"
-                android:textStyle="bold"
-                android:letterSpacing="0.08"
-                android:layout_marginBottom="@dimen/spacing_small"
-                android:paddingHorizontal="@dimen/spacing_small" />
+                android:textColor="@color/text_muted"
+                android:textStyle="bold" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/spacing_medium"
-                app:cardCornerRadius="@dimen/card_corner_radius"
-                app:cardElevation="@dimen/card_elevation">
+                android:layout_marginTop="@dimen/spacing_small"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="28dp"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="1dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -107,21 +109,19 @@
                     android:orientation="vertical"
                     android:padding="@dimen/spacing_medium">
 
-                    <!-- Tema -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/settings_theme"
                         android:textSize="@dimen/text_body"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="@dimen/spacing_small" />
+                        android:textStyle="bold" />
 
                     <RadioGroup
                         android:id="@+id/rgTheme"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginBottom="@dimen/spacing_medium">
+                        android:layout_marginBottom="@dimen/spacing_medium"
+                        android:orientation="vertical">
 
                         <com.google.android.material.radiobutton.MaterialRadioButton
                             android:id="@+id/rbThemeSystem"
@@ -145,17 +145,15 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="?attr/colorSurfaceVariant"
-                        android:layout_marginBottom="@dimen/spacing_medium" />
+                        android:layout_marginBottom="@dimen/spacing_medium"
+                        android:background="@color/card_stroke" />
 
-                    <!-- Dil -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/settings_language"
                         android:textSize="@dimen/text_body"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="@dimen/spacing_small" />
+                        android:textStyle="bold" />
 
                     <RadioGroup
                         android:id="@+id/rgLanguage"
@@ -175,28 +173,172 @@
                             android:layout_height="wrap_content"
                             android:text="@string/lang_english" />
                     </RadioGroup>
-
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- ── HAKKINDA BÖLÜMÜ ── -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/settings_section_about"
-                android:textSize="12sp"
-                android:textColor="?attr/colorPrimary"
-                android:textStyle="bold"
-                android:letterSpacing="0.08"
-                android:layout_marginBottom="@dimen/spacing_small"
-                android:paddingHorizontal="@dimen/spacing_small" />
+                android:layout_marginTop="@dimen/spacing_large"
+                android:text="@string/settings_section_notifications"
+                android:textColor="@color/text_muted"
+                android:textStyle="bold" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/spacing_large"
-                app:cardCornerRadius="@dimen/card_corner_radius"
-                app:cardElevation="@dimen/card_elevation">
+                android:layout_marginTop="@dimen/spacing_small"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="28dp"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_medium">
+
+                    <TextView
+                        android:id="@+id/tvNotificationStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/on_surface"
+                        android:textSize="@dimen/text_body"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/settings_notifications_hint"
+                        android:textColor="@color/text_muted"
+                        android:textSize="@dimen/text_caption" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/swMealReminder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="@string/settings_notif_meal_reminder" />
+
+                    <!-- Kahvalti saati sec -->
+                    <LinearLayout
+                        android:id="@+id/rowMealTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_reminder_time"
+                            android:textColor="@color/text_muted"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tvMealTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/primary"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnMealTimePicker"
+                            style="@style/Widget.Material3.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/settings_change_time"
+                            android:textAllCaps="false"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/swWaterReminder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/settings_notif_water_reminder" />
+
+                    <!-- Su saati sec -->
+                    <LinearLayout
+                        android:id="@+id/rowWaterTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/settings_reminder_time"
+                            android:textColor="@color/text_muted"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tvWaterTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/primary"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnWaterTimePicker"
+                            style="@style/Widget.Material3.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/settings_change_time"
+                            android:textAllCaps="false"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/swLimitAlert"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/settings_notif_limit_alert" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/swGoalAlert"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/settings_notif_goal_alert" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnNotificationSettings"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="@string/settings_open_notification_settings"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:text="@string/settings_section_about"
+                android:textColor="@color/text_muted"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="28dp"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="1dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -208,6 +350,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/app_name"
+                        android:textColor="@color/on_surface"
                         android:textSize="@dimen/text_body"
                         android:textStyle="bold" />
 
@@ -215,29 +358,29 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/settings_version"
-                        android:textSize="@dimen/text_caption"
-                        android:alpha="0.6" />
+                        android:textColor="@color/text_muted"
+                        android:textSize="@dimen/text_caption" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/settings_course"
-                        android:textSize="@dimen/text_caption"
-                        android:alpha="0.6" />
+                        android:textColor="@color/text_muted"
+                        android:textSize="@dimen/text_caption" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Çıkış Yap butonu -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogout"
                 style="@style/Widget.Material3.Button.OutlinedButton"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:layout_marginBottom="@dimen/spacing_large"
                 android:text="@string/btn_logout"
                 android:textAllCaps="false"
-                android:layout_marginBottom="@dimen/spacing_large"
-                app:strokeColor="@color/warning_red"
-                android:textColor="@color/warning_red" />
+                android:textColor="@color/warning_red"
+                app:strokeColor="@color/warning_red" />
 
         </LinearLayout>
     </ScrollView>

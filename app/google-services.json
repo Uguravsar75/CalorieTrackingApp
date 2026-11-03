@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "720015170508",
+    "project_id": "calorietrackingapp-5053b",
+    "storage_bucket": "calorietrackingapp-5053b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720015170508:android:8965fb4c95e720414adb69",
+        "android_client_info": {
+          "package_name": "tr.edu.duzce.mf.bm.calorietrackingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "720015170508-n2mmeku8kcnuudovqs8b3l9f32l0od3n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tr.edu.duzce.mf.bm.calorietrackingapp",
+            "certificate_hash": "2dfd099caacedb8e4d0386295ee265a07c969933"
+          }
+        },
+        {
+          "client_id": "720015170508-d7o7lq4qm4tvunpsdh6fj2jh3toigklr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_mZ5DMg8367xnmBMSuYeGjIAtMpv3Zu0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "720015170508-d7o7lq4qm4tvunpsdh6fj2jh3toigklr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,109 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorSurface"
+    android:background="@color/surface_tint_soft"
+    android:clipToPadding="false"
     android:padding="@dimen/spacing_large">
 
-    <!-- Logo / Başlık -->
-    <TextView
-        android:id="@+id/tvAppName"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="?attr/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@id/tvTitle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintVertical_bias="0.3" />
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingBottom="@dimen/spacing_large">
 
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/title_login"
-        android:textSize="@dimen/text_headline"
-        android:textColor="?attr/colorOnSurface"
-        android:alpha="0.6"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="@dimen/spacing_xlarge"
-        app:layout_constraintBottom_toTopOf="@id/tilEmail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvAppName" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:background="@drawable/bg_auth_hero"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_large">
 
-    <!-- Email -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilEmail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_email"
-        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-        android:layout_marginBottom="@dimen/spacing_medium"
-        app:layout_constraintBottom_toTopOf="@id/tilPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etEmail"
+            <TextView
+                android:id="@+id/tvAppName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_hero_tag"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/text_caption"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="serif"
+                android:lineSpacingExtra="2dp"
+                android:text="@string/login_hero_title"
+                android:textColor="@color/ink_inverse"
+                android:textSize="34sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/login_hero_subtitle"
+                android:textColor="#CCFAFAF7"
+                android:textSize="@dimen/text_body" />
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:imeOptions="actionNext" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginTop="-22dp"
+            app:cardBackgroundColor="?attr/colorSurface"
+            app:cardCornerRadius="32dp"
+            app:strokeColor="@color/card_stroke"
+            app:strokeWidth="1dp">
 
-    <!-- Şifre -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_password"
-        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-        app:passwordToggleEnabled="true"
-        android:layout_marginBottom="@dimen/spacing_large"
-        app:layout_constraintBottom_toTopOf="@id/btnLogin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tilEmail">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:imeOptions="actionDone" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_large">
 
-    <!-- Giriş Butonu -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnLogin"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/button_height"
-        android:text="@string/btn_login"
-        android:textAllCaps="false"
-        android:layout_marginBottom="@dimen/spacing_medium"
-        app:layout_constraintBottom_toTopOf="@id/tvGoRegister"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tilPassword" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilEmail"
+                    style="@style/Widget.CalorieTrackingApp.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_email">
 
-    <!-- Kayıt ol linki -->
-    <TextView
-        android:id="@+id/tvGoRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/link_go_register"
-        android:textColor="?attr/colorPrimary"
-        android:textSize="@dimen/text_body"
-        android:padding="@dimen/spacing_small"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnLogin" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEmail"
+                        style="@style/Widget.CalorieTrackingApp.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPassword"
+                    style="@style/Widget.CalorieTrackingApp.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:hint="@string/hint_password"
+                    app:endIconMode="password_toggle">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPassword"
+                        style="@style/Widget.CalorieTrackingApp.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginTop="@dimen/spacing_large"
+                    android:text="@string/btn_login"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:text="@string/or_continue_with"
+                    android:textColor="@color/text_muted" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnGoogleLogin"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:text="@string/btn_google_login"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/tvGoRegister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/spacing_large"
+                    android:paddingHorizontal="@dimen/spacing_small"
+                    android:paddingVertical="6dp"
+                    android:text="@string/link_go_register"
+                    android:textColor="@color/on_surface"
+                    android:textSize="@dimen/text_body" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

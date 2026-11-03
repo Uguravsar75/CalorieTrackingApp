@@ -3,30 +3,61 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- Material 3 Primary Palette — yeşil/sağlık teması -->
-    <color name="primary">#2E7D32</color>
-    <color name="primary_variant">#1B5E20</color>
-    <color name="on_primary">#FFFFFF</color>
-    <color name="secondary">#558B2F</color>
-    <color name="on_secondary">#FFFFFF</color>
-    <color name="background">#FAFAFA</color>
+    <!-- Brand -->
+    <color name="primary">#B8FF3C</color>
+    <color name="primary_variant">#95D425</color>
+    <color name="on_primary">#0A0A0A</color><!-- Koyu: lime yeşil açık renk, beyaz kontrast geçemez -->
+
+    <!-- Nav bar — her zaman koyu -->
+    <color name="secondary">#0A0A0A</color>
+    <color name="on_secondary">#FAFAF7</color>
+
+    <!-- Yüzeyler -->
+    <color name="background">#F8F8F5</color>
     <color name="surface">#FFFFFF</color>
-    <color name="on_surface">#212121</color>
+    <color name="surface_variant">#F2F2EF</color>
+    <color name="on_surface">#0A0A0A</color>
+    <color name="surface_tint_soft">#F3F1EB</color>
 
-    <!-- Kalori durumu renkleri -->
-    <color name="calorie_ok">#388E3C</color>       <!-- yeşil: hedefe uyuldu -->
-    <color name="calorie_warning">#F57C00</color>  <!-- turuncu: %80+ doldu -->
-    <color name="calorie_exceeded">#C62828</color> <!-- kırmızı: limit aşıldı -->
+    <!-- Metin -->
+    <color name="text_muted">#6B6B6B</color>
 
-    <!-- Uyarı renkleri -->
-    <color name="warning_red">#C62828</color>
-    <color name="warning_bg">#FFEBEE</color>
+    <!-- Kart çerçevesi -->
+    <color name="card_stroke">#E8E8E5</color>
 
-    <!-- Haftalık rapor -->
-    <color name="report_green">#4CAF50</color>
-    <color name="report_red">#F44336</color>
-    <color name="report_grey">#9E9E9E</color>
+    <!-- Kalori durumu -->
+    <color name="calorie_ok">#2D7A3E</color>
+    <color name="calorie_warning">#C97A1E</color>
+    <color name="calorie_exceeded">#C4361E</color>
 
-    <!-- Progress bar track -->
-    <color name="progress_track">#E8F5E9</color>
+    <!-- Uyarı -->
+    <color name="warning_red">#C4361E</color>
+    <color name="warning_bg">#FEE8E4</color>
+
+    <!-- Hero kart -->
+    <color name="hero_background">#0A0A0A</color>
+    <color name="hero_text">#FAFAF7</color>
+    <color name="hero_text_muted">#A8A89E</color>
+
+    <!-- Soft kart arka planları (pastel, düşük saturasyon) -->
+    <color name="mint_soft">#DFF5E8</color>
+    <color name="orange_soft">#FFF0E4</color>
+    <color name="yellow_soft">#FFF8D6</color>
+    <color name="coral_soft">#FFE8E0</color>
+
+    <!-- Navigasyon -->
+    <color name="nav_icon_idle">#8A8A8A</color>
+    <color name="nav_indicator">#B8FF3C</color>
+
+    <!-- Rapor -->
+    <color name="report_green">#2D7A3E</color>
+    <color name="report_red">#C4361E</color>
+    <color name="report_yellow">#C97A1E</color>
+    <color name="report_grey">#9A9A9A</color>
+
+    <!-- Progress -->
+    <color name="progress_track">#E8E8E5</color>
+
+    <!-- Ters metin (koyu arka plan üstü) -->
+    <color name="ink_inverse">#FAFAF7</color>
 </resources>

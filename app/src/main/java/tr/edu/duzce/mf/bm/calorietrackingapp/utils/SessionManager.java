@@ -3,10 +3,8 @@ package tr.edu.duzce.mf.bm.calorietrackingapp.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-/**
- * SessionManager: Kullanıcının oturum durumunu SharedPreferences ile yönetir.
- * Giriş yapıldığında oturum açılır, çıkışta temizlenir.
- */
+import com.google.firebase.auth.FirebaseAuth;
+
 public class SessionManager {
 
     private static final String PREFS_NAME = "session_prefs";
@@ -27,14 +25,18 @@ public class SessionManager {
     }
 
     public boolean isLoggedIn() {
-        return prefs.getBoolean(KEY_IS_LOGGED_IN, false);
+        return FirebaseAuth.getInstance().getCurrentUser() != null;
     }
 
     public String getLoggedInEmail() {
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            return FirebaseAuth.getInstance().getCurrentUser().getEmail();
+        }
         return prefs.getString(KEY_USER_EMAIL, null);
     }
 
     public void clearSession() {
+        FirebaseAuth.getInstance().signOut();
         prefs.edit().clear().apply();
     }
 }

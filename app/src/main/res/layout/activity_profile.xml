@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorSurface">
+    android:background="@color/surface_tint_soft">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:elevation="0dp">
+
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -19,6 +21,8 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/spacing_large"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -27,122 +31,174 @@
             android:orientation="vertical"
             android:padding="@dimen/spacing_medium">
 
-            <!-- Avatar + Ad kartı -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/spacing_medium"
-                app:cardCornerRadius="@dimen/card_corner_radius"
-                app:cardElevation="@dimen/card_elevation">
+                app:cardBackgroundColor="@color/hero_background"
+                app:cardCornerRadius="32dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
                     android:padding="@dimen/spacing_large">
 
-                    <!-- Avatar dairesi: baş harfler -->
                     <TextView
                         android:id="@+id/tvAvatar"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:gravity="center"
-                        android:textSize="32sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
+                        android:layout_width="84dp"
+                        android:layout_height="84dp"
                         android:background="@drawable/bg_avatar"
-                        android:layout_marginBottom="@dimen/spacing_medium" />
+                        android:gravity="center"
+                        android:textColor="@color/on_surface"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/tvProfileName"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/text_title"
-                        android:textStyle="bold"
-                        android:textColor="?attr/colorOnSurface" />
+                        android:layout_marginStart="@dimen/spacing_medium"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/tvProfileSubtitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="@dimen/text_caption"
-                        android:textColor="?attr/colorOnSurface"
-                        android:alpha="0.6"
-                        android:layout_marginTop="4dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/profile_section_overview"
+                            android:textAllCaps="true"
+                            android:textColor="@color/primary"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
 
+                        <TextView
+                            android:id="@+id/tvProfileName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:fontFamily="serif"
+                            android:textColor="@color/hero_text"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:id="@+id/tvProfileSubtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:textColor="@color/hero_text_muted"
+                            android:textSize="@dimen/text_body" />
+                    </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- VKİ Kartı -->
-            <com.google.android.material.card.MaterialCardView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/spacing_medium"
-                app:cardCornerRadius="@dimen/card_corner_radius"
-                app:cardElevation="@dimen/card_elevation">
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="@dimen/spacing_medium">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/profile_label_bmi"
-                        android:textSize="@dimen/text_caption"
-                        android:textColor="?attr/colorOnSurface"
-                        android:alpha="0.6"
-                        android:layout_marginBottom="@dimen/spacing_small" />
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="?attr/colorSurface"
+                    app:cardCornerRadius="24dp"
+                    app:strokeColor="@color/card_stroke"
+                    app:strokeWidth="1dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical">
+                        android:orientation="vertical"
+                        android:padding="@dimen/spacing_medium">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/profile_label_bmi"
+                            android:textColor="@color/text_muted"
+                            android:textSize="@dimen/text_caption" />
 
                         <TextView
                             android:id="@+id/tvBmiValue"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="36sp"
-                            android:textStyle="bold"
-                            android:textColor="?attr/colorPrimary" />
+                            android:layout_marginTop="6dp"
+                            android:textColor="@color/on_surface"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tvBmiLabel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="@dimen/text_body"
-                            android:textStyle="bold"
-                            android:layout_marginStart="@dimen/spacing_medium"
-                            android:padding="@dimen/spacing_small"
-                            android:background="@drawable/bg_report_status" />
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/bg_report_status"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="6dp"
+                            android:textStyle="bold" />
                     </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
 
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="1dp" />
 
-            <!-- Fiziksel Bilgiler -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/mint_soft"
+                    app:cardCornerRadius="24dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/spacing_medium">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/profile_label_calorie_goal"
+                            android:textColor="@color/text_muted"
+                            android:textSize="@dimen/text_caption" />
+
+                        <TextView
+                            android:id="@+id/tvCalorieGoal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:textColor="@color/on_surface"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvSyncStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:textColor="@color/text_muted"
+                            android:textSize="@dimen/text_caption" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/profile_section_physical"
-                android:textSize="12sp"
-                android:textColor="?attr/colorPrimary"
-                android:textStyle="bold"
-                android:letterSpacing="0.08"
+                android:layout_marginTop="@dimen/spacing_large"
                 android:layout_marginBottom="@dimen/spacing_small"
-                android:paddingHorizontal="@dimen/spacing_small" />
+                android:text="@string/profile_section_physical"
+                android:textColor="@color/text_muted"
+                android:textStyle="bold" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/spacing_medium"
-                app:cardCornerRadius="@dimen/card_corner_radius"
-                app:cardElevation="@dimen/card_elevation">
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="24dp"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="1dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -150,57 +206,6 @@
                     android:orientation="vertical"
                     android:padding="@dimen/spacing_medium">
 
-                    <!-- Yaş + Cinsiyet satırı -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="@dimen/spacing_medium">
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/profile_label_age"
-                                android:textSize="@dimen/text_caption"
-                                android:textColor="?attr/colorOnSurface"
-                                android:alpha="0.6" />
-                            <TextView
-                                android:id="@+id/tvAge"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="@dimen/text_headline"
-                                android:textStyle="bold"
-                                android:textColor="?attr/colorOnSurface" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/profile_label_gender"
-                                android:textSize="@dimen/text_caption"
-                                android:textColor="?attr/colorOnSurface"
-                                android:alpha="0.6" />
-                            <TextView
-                                android:id="@+id/tvGender"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textSize="@dimen/text_headline"
-                                android:textStyle="bold"
-                                android:textColor="?attr/colorOnSurface" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <!-- Boy + Kilo satırı -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -211,20 +216,22 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:orientation="vertical">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/profile_label_height"
-                                android:textSize="@dimen/text_caption"
-                                android:textColor="?attr/colorOnSurface"
-                                android:alpha="0.6" />
+                                android:text="@string/profile_label_age"
+                                android:textColor="@color/text_muted"
+                                android:textSize="@dimen/text_caption" />
+
                             <TextView
-                                android:id="@+id/tvHeight"
+                                android:id="@+id/tvAge"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:textColor="@color/on_surface"
                                 android:textSize="@dimen/text_headline"
-                                android:textStyle="bold"
-                                android:textColor="?attr/colorOnSurface" />
+                                android:textStyle="bold" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -232,44 +239,113 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/profile_label_gender"
+                                android:textColor="@color/text_muted"
+                                android:textSize="@dimen/text_caption" />
+
+                            <TextView
+                                android:id="@+id/tvGender"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:textColor="@color/on_surface"
+                                android:textSize="@dimen/text_headline"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/profile_label_height"
+                                android:textColor="@color/text_muted"
+                                android:textSize="@dimen/text_caption" />
+
+                            <TextView
+                                android:id="@+id/tvHeight"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:textColor="@color/on_surface"
+                                android:textSize="@dimen/text_headline"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/profile_label_weight"
-                                android:textSize="@dimen/text_caption"
-                                android:textColor="?attr/colorOnSurface"
-                                android:alpha="0.6" />
+                                android:textColor="@color/text_muted"
+                                android:textSize="@dimen/text_caption" />
+
                             <TextView
                                 android:id="@+id/tvWeight"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:textColor="@color/on_surface"
                                 android:textSize="@dimen/text_headline"
-                                android:textStyle="bold"
-                                android:textColor="?attr/colorOnSurface" />
+                                android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="@string/label_activity_level"
+                        android:textColor="@color/text_muted"
+                        android:textSize="@dimen/text_caption" />
+
+                    <TextView
+                        android:id="@+id/tvActivity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/on_surface"
+                        android:textSize="@dimen/text_headline"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Sağlık Bilgileri -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/profile_section_health"
-                android:textSize="12sp"
-                android:textColor="?attr/colorPrimary"
-                android:textStyle="bold"
-                android:letterSpacing="0.08"
+                android:layout_marginTop="@dimen/spacing_large"
                 android:layout_marginBottom="@dimen/spacing_small"
-                android:paddingHorizontal="@dimen/spacing_small" />
+                android:text="@string/profile_section_health"
+                android:textColor="@color/text_muted"
+                android:textStyle="bold" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/spacing_medium"
-                app:cardCornerRadius="@dimen/card_corner_radius"
-                app:cardElevation="@dimen/card_elevation">
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="24dp"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="1dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -277,62 +353,105 @@
                     android:orientation="vertical"
                     android:padding="@dimen/spacing_medium">
 
-                    <!-- Hastalık -->
-                    <LinearLayout
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_label_disease"
+                        android:textColor="@color/text_muted"
+                        android:textSize="@dimen/text_caption" />
+
+                    <TextView
+                        android:id="@+id/tvDisease"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/on_surface"
+                        android:textSize="@dimen/text_headline"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="@string/label_other_conditions"
+                        android:textColor="@color/text_muted"
+                        android:textSize="@dimen/text_caption" />
+
+                    <TextView
+                        android:id="@+id/tvOtherDiseases"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginBottom="@dimen/spacing_medium">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/profile_label_disease"
-                            android:textSize="@dimen/text_caption"
-                            android:textColor="?attr/colorOnSurface"
-                            android:alpha="0.6" />
-                        <TextView
-                            android:id="@+id/tvDisease"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="@dimen/text_headline"
-                            android:textStyle="bold"
-                            android:textColor="?attr/colorOnSurface" />
-                    </LinearLayout>
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/on_surface"
+                        android:textSize="@dimen/text_body" />
 
-                    <!-- Kalori hedefi -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/profile_label_calorie_goal"
-                            android:textSize="@dimen/text_caption"
-                            android:textColor="?attr/colorOnSurface"
-                            android:alpha="0.6" />
-                        <TextView
-                            android:id="@+id/tvCalorieGoal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="@dimen/text_headline"
-                            android:textStyle="bold"
-                            android:textColor="?attr/colorPrimary" />
-                    </LinearLayout>
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:text="@string/label_timezone"
+                        android:textColor="@color/text_muted"
+                        android:textSize="@dimen/text_caption" />
 
+                    <TextView
+                        android:id="@+id/tvTimezone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/on_surface"
+                        android:textSize="@dimen/text_body" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Düzenle Butonu -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:layout_marginBottom="@dimen/spacing_small"
+                android:text="@string/profile_section_preferences"
+                android:textColor="@color/text_muted"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="24dp"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_medium">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_sync_status"
+                        android:textColor="@color/text_muted"
+                        android:textSize="@dimen/text_caption" />
+
+                    <TextView
+                        android:id="@+id/tvSyncDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/sync_local_ready"
+                        android:textColor="@color/on_surface"
+                        android:textSize="@dimen/text_body" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnEditProfile"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:layout_marginBottom="@dimen/spacing_large"
                 android:text="@string/btn_edit_profile"
-                android:textAllCaps="false"
-                android:layout_marginBottom="@dimen/spacing_large" />
-
+                android:textAllCaps="false" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

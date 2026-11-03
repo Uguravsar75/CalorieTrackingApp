@@ -18,7 +18,7 @@ public interface UserDao {
 
     // Tek kullanıcı: oturumu açık olan kullanıcıyı döner
     @Query("SELECT * FROM users LIMIT 1")
-    User getUser();
+    User getFirstUser();
 
     @Query("SELECT COUNT(*) FROM users")
     int getUserCount();

@@ -1,13 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Karanlık tema -->
     <style name="Base.Theme.CalorieTrackingApp" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">#81C784</item>
-        <item name="colorPrimaryVariant">#4CAF50</item>
-        <item name="colorOnPrimary">#000000</item>
-        <item name="colorSecondary">#AED581</item>
-        <item name="colorOnSecondary">#000000</item>
-        <item name="android:colorBackground">#121212</item>
-        <item name="colorSurface">#1E1E1E</item>
-        <item name="colorOnSurface">#E0E0E0</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_variant</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+        <item name="colorOnSurface">@color/on_surface</item>
+        <item name="colorOutline">@color/card_stroke</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.CalorieTrackingApp.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.CalorieTrackingApp.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.CalorieTrackingApp.Large</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 </resources>

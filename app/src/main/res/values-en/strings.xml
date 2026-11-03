@@ -11,8 +11,13 @@
     <string name="btn_search">Search</string>
     <string name="btn_back">Back</string>
     <string name="error_required_field">This field is required.</string>
+    <string name="error_age_range">Age must be between %1$d and %2$d.</string>
+    <string name="error_height_range">Height must be between %1$d and %2$d cm.</string>
+    <string name="error_weight_range">Weight must be between %1$d and %2$d kg.</string>
+    <string name="error_calorie_goal_range">Daily goal must be between %1$d and %2$d kcal.</string>
+    <string name="error_profile_values_invalid">Check your profile values.</string>
 
-    <string name="splash_loading">Loading…</string>
+    <string name="splash_loading">Loading...</string>
 
     <string name="title_profile_setup">Create Profile</string>
     <string name="hint_name">Your name</string>
@@ -30,26 +35,78 @@
     <string name="label_calorie_goal">Daily Calorie Goal</string>
     <string name="hint_calorie_goal">Calories (kcal)</string>
     <string name="profile_setup_complete">Profile created!</string>
+    <string name="profile_setup_subtitle">Personalize your calorie target and health preferences.</string>
+    <string name="calorie_goal_explanation_format">The %1$d kcal suggestion is based on Harris-Benedict BMR (%2$d) and a %3$.2f activity factor.</string>
+    <string name="label_activity_level">Activity level</string>
+    <string name="activity_low">Low activity</string>
+    <string name="activity_moderate">Moderately active</string>
+    <string name="activity_high">Active</string>
+    <string name="activity_very_high">Very active</string>
+    <string name="label_health_conditions">Health conditions</string>
+    <string name="label_cholesterol">Cholesterol</string>
+    <string name="hint_other_diseases">Other chronic diseases / notes</string>
+    <string name="label_other_conditions">Other conditions</string>
 
     <string name="title_main">Home</string>
+    <string name="dashboard_eyebrow_today">Today</string>
+    <string name="dashboard_ai_title">AI coach insight</string>
+    <string name="dashboard_manual_stats_hint">Tap the water, steps, and exercise cards to enter your data.</string>
+    <string name="dashboard_profile_snapshot">Profile snapshot</string>
     <string name="label_daily_goal">Daily Goal</string>
     <string name="label_consumed">Consumed</string>
     <string name="label_remaining">Remaining</string>
+    <string name="label_filled">filled</string>
     <string name="label_kcal">kcal</string>
     <string name="label_todays_meals">Today\'s Meals</string>
     <string name="label_no_meals">No meals added yet.</string>
     <string name="btn_add_meal">+ Add Meal</string>
     <string name="btn_weekly_report">Weekly Report</string>
     <string name="warning_limit_exceeded">You have exceeded your daily calorie limit!</string>
+    <string name="dashboard_percent_format">%1$d%%</string>
+    <string name="dashboard_over_limit_format">%1$d kcal over</string>
+    <string name="dashboard_default_balance_note">To stay balanced, increase vegetables, yogurt, and water for the rest of the day.</string>
+    <string name="dashboard_no_health_warning">No health warning right now. You are moving in balance with your daily goal.</string>
+    <string name="title_smart_suggestions">Smart meal suggestions</string>
     <string name="label_meal_breakfast">Breakfast</string>
     <string name="label_meal_lunch">Lunch</string>
     <string name="label_meal_dinner">Dinner</string>
     <string name="label_meal_snack">Snack</string>
+    <string name="btn_camera_scan">Scan meal with camera</string>
+    <string name="dashboard_water_title">Water</string>
+    <string name="dashboard_steps_title">Steps</string>
+    <string name="dashboard_exercise_title">Exercise</string>
+    <string name="dashboard_meal_summary">Meal summary</string>
+    <string name="dashboard_water_format">%1$d / 8 glasses</string>
+    <string name="dashboard_steps_format">%1$d steps</string>
+    <string name="dashboard_exercise_format">%1$d kcal</string>
 
     <string name="title_add_meal">Add Meal</string>
-    <string name="hint_search_food">Search food…</string>
-    <string name="hint_amount">Amount (grams)</string>
-    <string name="warning_diabetes">⚠ Diabetes warning: This food contains sugar!</string>
+    <string name="add_meal_subtitle">Pick a food, choose which meal it belongs to, and enter the amount using grams or familiar serving sizes.</string>
+    <string name="add_meal_section_details">Meal and portion details</string>
+    <string name="add_meal_section_details_hint">Your entry is saved directly to the selected meal. Serving sizes are converted into estimated grams for calorie calculation.</string>
+    <string name="add_meal_section_search">Choose food</string>
+    <string name="label_add_to_meal">Add to which meal?</string>
+    <string name="label_portion_type">Measurement type</string>
+    <string name="hint_search_food">Search food...</string>
+    <string name="hint_amount">Amount</string>
+    <string name="portion_gram">Gram</string>
+    <string name="portion_plate">Plate</string>
+    <string name="portion_bowl">Bowl</string>
+    <string name="portion_tablespoon">Tablespoon</string>
+    <string name="portion_teaspoon">Teaspoon</string>
+    <string name="portion_glass">Glass</string>
+    <string name="portion_serving">Serving</string>
+    <string name="portion_piece">Piece</string>
+    <string name="portion_hint_format">1 unit is estimated as about %1$d grams.</string>
+    <string name="selected_food_title">Selected food</string>
+    <string name="selected_food_ready">Ready</string>
+    <string name="selected_food_calorie_format">About %1$d kcal per 100 grams</string>
+    <string name="calculated_calorie_format">Estimated %1$d grams • %2$d kcal</string>
+    <string name="warning_diabetes">Diabetes warning: This food contains sugar!</string>
+    <string name="warning_hypertension">Blood pressure warning: This food may be salty or processed.</string>
+    <string name="warning_cholesterol">Cholesterol warning: Prefer grilled or vegetable-focused portions over fried/fatty options.</string>
+    <string name="meal_fit_remaining_format">About %1$d kcal will remain after this portion.</string>
+    <string name="meal_over_remaining_format">This portion may exceed your target by about %1$d kcal.</string>
     <string name="meal_added_success">Meal added.</string>
     <string name="error_select_food">Please select a food item.</string>
     <string name="error_invalid_amount">Please enter a valid amount.</string>
@@ -62,21 +119,91 @@
     <string name="category_snack">Snack</string>
 
     <string name="title_weekly_report">Weekly Report</string>
-    <string name="label_report_goal_met">Goal met ✓</string>
-    <string name="label_report_goal_exceeded">Goal exceeded ✗</string>
+    <string name="label_report_goal_met">Goal met</string>
+    <string name="label_report_goal_close">Close to goal</string>
+    <string name="label_report_goal_exceeded">Goal exceeded</string>
     <string name="label_report_no_data">No data</string>
+    <string name="report_weekly_average">Weekly average</string>
+    <string name="report_adherence_label">Diet adherence rate</string>
+    <string name="report_top_food_label">Most consumed food</string>
+    <string name="report_top_foods_label">Most consumed foods</string>
+    <string name="report_monthly_title">Monthly report</string>
+    <string name="report_monthly_average">Monthly average</string>
+    <string name="report_monthly_adherence">Monthly adherence</string>
+    <string name="report_monthly_top_foods">Most consumed this month</string>
+    <string name="report_ai_title">AI analysis report</string>
+    <string name="report_average_format">%1$d kcal</string>
+    <string name="report_top_food_format">%1$s</string>
+    <string name="report_top_food_empty">Not enough data yet</string>
+    <string name="report_adherence_rate_format">%1$d%%</string>
+    <string name="report_daily_table_title">Daily calorie table</string>
+    <string name="report_calendar_title">Calendar view</string>
+    <string name="report_calendar_day_summary">Day summary</string>
+    <string name="report_calendar_consumed_format">Consumed: %1$d kcal</string>
+    <string name="report_calendar_goal_format">Goal: %1$d kcal</string>
+    <string name="report_calendar_meals_empty">No meals logged for this day.</string>
+    <string name="report_calendar_meals_title">Meals</string>
+    <string name="report_col_day">Day</string>
+    <string name="report_col_consumed">Consumed</string>
+    <string name="report_col_goal">Goal</string>
+    <string name="report_col_status">Status</string>
+    <string name="report_col_fire">Fire</string>
+    <string name="report_streak_label">Diet streak</string>
+    <string name="report_streak_value_format">%1$d days</string>
+    <string name="report_status_empty">None</string>
+    <string name="report_streak_empty">-</string>
+    <string name="report_streak_break">-</string>
+    <string name="calendar_prev_month">Previous month</string>
+    <string name="calendar_next_month">Next month</string>
+    <string name="calendar_legend_ok">Under goal</string>
+    <string name="calendar_legend_close">Close to goal</string>
+    <string name="calendar_legend_over">Limit exceeded</string>
+    <string name="calendar_legend_empty">No record</string>
+    <string name="chart_weekly_title">Weekly calorie trend</string>
+    <string name="chart_goal_label">Goal</string>
+    <string name="tab_weekly">Weekly</string>
+    <string name="tab_monthly">Monthly</string>
+    <string name="settings_reminder_time">Reminder time</string>
+    <string name="settings_change_time">Change</string>
+    <string name="settings_time_format">%02d:%02d</string>
+    <string name="settings_meal_time_title">Breakfast reminder time</string>
+    <string name="settings_water_time_title">Water reminder time</string>
+    <string name="macro_section_title">Macro info (optional) ›</string>
+    <string name="macro_protein">Protein (g)</string>
+    <string name="macro_carb">Carbohydrates (g)</string>
+    <string name="macro_fat">Fat (g)</string>
 
     <string name="title_profile_edit">Edit Profile</string>
     <string name="profile_updated">Profile updated.</string>
 
     <string name="title_camera">Recognize by Photo</string>
     <string name="btn_take_photo">Take Photo</string>
-    <string name="camera_analyzing">Analyzing…</string>
+    <string name="btn_pick_from_gallery">Pick from Gallery</string>
+    <string name="camera_analyzing">Analyzing...</string>
     <string name="btn_confirm_food">Confirm and Add</string>
     <string name="camera_permission_denied">Camera permission required.</string>
+    <string name="camera_pick_gallery">Choose a photo from gallery</string>
+    <string name="camera_file_error">Could not create file: %1$s</string>
+    <string name="camera_capture_failed">Could not capture the photo.</string>
+    <string name="camera_photo_read_failed">Could not read the photo.</string>
+    <string name="camera_gallery_pick_failed">Could not select a photo from gallery.</string>
+    <string name="camera_analysis_error">Analysis error: %1$s</string>
+    <string name="camera_analysis_rate_limited">AI quota is currently full. Your photo is ready; you can still enter the food name and calories manually and save it.</string>
+    <string name="camera_analysis_missing_key">AI key is missing. You can still enter the food name and calories manually and save it.</string>
+    <string name="camera_analysis_error_generic">AI analysis could not be completed. Your photo is ready; you can still enter the food name and calories manually and save it.</string>
+    <string name="camera_analysis_network_error">The AI service could not be reached. Check your internet connection or quota; you can continue with manual entry.</string>
+    <string name="camera_food_name_required">Food name is required.</string>
     <string name="camera_result_prefix">Estimated: </string>
+    <string name="camera_subtitle">Scan a meal and let AI estimate calories and nutrition split.</string>
+    <string name="camera_ai_result">AI result card</string>
+    <string name="camera_food_name">Detected food</string>
+    <string name="camera_calorie_estimate">Estimated calories</string>
+    <string name="camera_macro_protein">Protein</string>
+    <string name="camera_macro_carb">Carbs</string>
+    <string name="camera_macro_fat">Fat</string>
 
     <string name="menu_home">Home</string>
+    <string name="menu_search">Discover</string>
     <string name="menu_report">Report</string>
     <string name="menu_profile">Profile</string>
     <string name="menu_settings">Settings</string>
@@ -90,14 +217,15 @@
     <string name="theme_system">System Default</string>
     <string name="theme_light">Light Theme</string>
     <string name="theme_dark">Dark Theme</string>
-    <string name="lang_turkish">Türkçe</string>
+    <string name="lang_turkish">Turkish</string>
     <string name="lang_english">English</string>
     <string name="settings_section_about">About</string>
     <string name="settings_version">Version 1.0</string>
     <string name="settings_course">BM443 Mobile Programming</string>
 
-    <!-- Profile Page -->
     <string name="title_profile">My Profile</string>
+    <string name="profile_section_overview">Overview</string>
+    <string name="profile_section_preferences">System</string>
     <string name="profile_section_physical">Physical Information</string>
     <string name="profile_section_health">Health Information</string>
     <string name="profile_label_age">Age</string>
@@ -107,6 +235,13 @@
     <string name="profile_label_bmi">Body Mass Index (BMI)</string>
     <string name="profile_label_disease">Chronic Disease</string>
     <string name="profile_label_calorie_goal">Daily Calorie Goal</string>
+    <string name="label_timezone">Time zone</string>
+    <string name="label_sync_status">Sync status</string>
+    <string name="sync_local_ready">Firebase sync is active. Your data is being stored in the cloud.</string>
+    <string name="sync_not_configured">Firebase sync is unavailable.</string>
+    <string name="sync_last_success_format">Last successful sync: %1$s</string>
+    <string name="sync_error_format">Sync error: %1$s</string>
+    <string name="sync_pending">No successful sync recorded yet.</string>
     <string name="bmi_underweight">Underweight</string>
     <string name="bmi_normal">Normal</string>
     <string name="bmi_overweight">Overweight</string>
@@ -116,8 +251,10 @@
     <string name="unit_kg">kg</string>
     <string name="unit_kcal_day">kcal/day</string>
 
-    <!-- Login / Register -->
     <string name="title_login">Login</string>
+    <string name="login_hero_tag">Kaloriq - AI</string>
+    <string name="login_hero_title">Scan your food,\nkeep your rhythm.</string>
+    <string name="login_hero_subtitle">A minimal and fast calorie tracking experience designed for daily use.</string>
     <string name="title_register">Register</string>
     <string name="hint_email">Email address</string>
     <string name="hint_password">Password</string>
@@ -125,13 +262,114 @@
     <string name="btn_login">Login</string>
     <string name="btn_register">Register</string>
     <string name="btn_logout">Logout</string>
-    <string name="link_go_register">Don\'t have an account? Register</string>
+    <string name="link_go_register">Do not have an account? Register</string>
     <string name="link_go_login">Already have an account? Login</string>
+    <string name="or_continue_with">or continue with</string>
+    <string name="btn_google_login">Continue with Google</string>
     <string name="error_invalid_email">Enter a valid email address.</string>
     <string name="error_password_short">Password must be at least 6 characters.</string>
     <string name="error_passwords_not_match">Passwords do not match.</string>
     <string name="error_email_taken">This email is already registered.</string>
     <string name="error_login_failed">Incorrect email or password.</string>
+    <string name="error_google_config_missing">Firebase web client configuration is missing for Google sign-in.</string>
+    <string name="error_google_login_failed">Google sign-in could not be completed.</string>
     <string name="logout_confirm_title">Logout</string>
     <string name="logout_confirm_message">Are you sure you want to logout?</string>
+
+    <!-- Notification texts -->
+    <string name="notif_meal_reminder">Don\'t forget to log your breakfast and meals.</string>
+    <string name="notif_limit_exceeded">You exceeded your daily limit by %1$d kcal. Choose a lighter option.</string>
+    <string name="notif_water_reminder">Water reminder: keep your hydration up today.</string>
+    <string name="notif_goal_close">You are %1$d kcal away from your daily goal.</string>
+    <string name="notification_permission_title">Notification permission</string>
+    <string name="notification_permission_message">Notification permission is required for breakfast, water, and goal alerts.</string>
+    <string name="notification_permission_settings_message">Notifications are off. You can enable app notifications from settings to receive reminders.</string>
+    <string name="notification_open_settings">Open Settings</string>
+    <string name="settings_section_notifications">Notifications</string>
+    <string name="settings_notifications_enabled">Notifications enabled</string>
+    <string name="settings_notifications_disabled">Notifications disabled</string>
+    <string name="settings_notifications_hint">System notification permission is used for breakfast, water, and daily goal alerts.</string>
+    <string name="settings_open_notification_settings">Open Notification Settings</string>
+
+    <!-- Dashboard — Manual stat input -->
+    <string name="dialog_enter_water">How many glasses of water did you drink today?</string>
+    <string name="dialog_enter_steps">How many steps did you take today?</string>
+    <string name="dialog_enter_exercise">How many kcal did you burn exercising?</string>
+
+    <!-- Meal edit bottom sheet -->
+    <string name="meal_options_title">Meal Options</string>
+    <string name="btn_edit_meal">Edit</string>
+    <string name="hint_edit_calories">Total calories (kcal)</string>
+    <string name="hint_edit_grams">Amount (grams)</string>
+    <string name="meal_updated_success">Meal updated.</string>
+
+    <!-- Unit: age -->
+    <string name="unit_years">yrs</string>
+
+    <!-- Generic error messages -->
+    <string name="error_registration_failed_format">Registration failed: %1$s</string>
+    <string name="error_profile_save_failed_format">Profile could not be saved: %1$s</string>
+    <string name="error_unknown">Unknown error</string>
+
+    <!-- MainActivity — water counter and meal subtitle -->
+    <string name="water_counter_label">/ 8 glasses</string>
+    <string name="meal_subtitle_format">%1$d kcal  •  %2$s</string>
+
+    <!-- Camera — error dialog -->
+    <string name="camera_error_dialog_title">AI Analysis Error</string>
+    <string name="camera_error_dialog_message_format">Error code:\n\n%1$s\n\nYou can enter the food name and calories manually.</string>
+    <string name="btn_ok">OK</string>
+
+    <!-- Profile screen — value formats -->
+    <string name="profile_subtitle_format">%1$s • %2$d %3$s</string>
+    <string name="profile_value_age_format">%1$d %2$s</string>
+    <string name="profile_value_cm_format">%1$d %2$s</string>
+    <string name="profile_value_kg_format">%1$d %2$s</string>
+    <string name="profile_value_kcal_format">%1$d %2$s</string>
+
+    <!-- Camera — AI & manual note -->
+    <string name="camera_macro_protein_val">Protein %1$dg</string>
+    <string name="camera_macro_carb_val">Carbs %1$dg</string>
+    <string name="camera_macro_fat_val">Fat %1$dg</string>
+    <string name="camera_estimated_note">This is an AI estimate. You can edit the food name and calories before saving.</string>
+    <string name="camera_manual_note">AI result unavailable. Enter the food name and calories manually and save.</string>
+    <string name="meal_macro_summary_format">P %1$dg • C %2$dg • F %3$dg</string>
+    <string name="meal_ai_estimated">AI estimate</string>
+
+    <!-- Camera — save error -->
+    <string name="camera_save_error">Could not save meal. Please try again.</string>
+
+    <!-- Add suggested meal button -->
+    <string name="btn_add_suggested_meal">Add Food</string>
+
+    <!-- Settings — notification switches -->
+    <string name="settings_notif_meal_reminder">Breakfast / meal reminder</string>
+    <string name="settings_notif_water_reminder">Water reminder</string>
+    <string name="settings_notif_limit_alert">Daily limit exceeded alert</string>
+    <string name="settings_notif_goal_alert">Close to goal alert</string>
+
+    <!-- Security — password change -->
+    <string name="settings_section_security">Security</string>
+    <string name="settings_change_password">Change Password</string>
+    <string name="dialog_change_password_title">Change Password</string>
+    <string name="hint_current_password">Current Password</string>
+    <string name="hint_new_password">New Password</string>
+    <string name="hint_confirm_new_password">Confirm New Password</string>
+    <string name="error_password_mismatch">Passwords do not match.</string>
+    <string name="error_current_password_wrong">Current password is incorrect. Please try again.</string>
+    <string name="password_changed_success">Password updated successfully.</string>
+    <string name="settings_google_no_password">Signed in with Google. Password change is not available.</string>
+
+    <!-- Notification channel description -->
+    <string name="notif_channel_description">Calorie tracking notifications</string>
+
+    <!-- Weekly report — calendar weekday abbreviations -->
+    <string name="weekday_short_sun">Sun</string>
+    <string name="weekday_short_mon">Mon</string>
+    <string name="weekday_short_tue">Tue</string>
+    <string name="weekday_short_wed">Wed</string>
+    <string name="weekday_short_thu">Thu</string>
+    <string name="weekday_short_fri">Fri</string>
+    <string name="weekday_short_sat">Sat</string>
+
 </resources>

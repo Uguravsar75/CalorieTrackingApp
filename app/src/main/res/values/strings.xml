@@ -13,6 +13,11 @@
     <string name="btn_search">Ara</string>
     <string name="btn_back">Geri</string>
     <string name="error_required_field">Bu alan zorunludur.</string>
+    <string name="error_age_range">Yaş %1$d-%2$d arasında olmalıdır.</string>
+    <string name="error_height_range">Boy %1$d-%2$d cm arasında olmalıdır.</string>
+    <string name="error_weight_range">Kilo %1$d-%2$d kg arasında olmalıdır.</string>
+    <string name="error_calorie_goal_range">Günlük hedef %1$d-%2$d kcal arasında olmalıdır.</string>
+    <string name="error_profile_values_invalid">Profil değerlerini kontrol edin.</string>
 
     <!-- Splash -->
     <string name="splash_loading">Yükleniyor…</string>
@@ -34,28 +39,80 @@
     <string name="label_calorie_goal">Günlük Kalori Hedefiniz</string>
     <string name="hint_calorie_goal">Kalori (kcal)</string>
     <string name="profile_setup_complete">Profil oluşturuldu!</string>
+    <string name="profile_setup_subtitle">Hedef kalorinizi ve sağlık tercihlerinizi kişiselleştirin.</string>
+    <string name="calorie_goal_explanation_format">%1$d kcal önerisi, Harris-Benedict BMR (%2$d) ve %3$.2f aktivite katsayısı ile hesaplandı.</string>
+    <string name="label_activity_level">Aktivite seviyesi</string>
+    <string name="activity_low">Düşük hareket</string>
+    <string name="activity_moderate">Orta aktif</string>
+    <string name="activity_high">Aktif</string>
+    <string name="activity_very_high">Çok aktif</string>
+    <string name="label_health_conditions">Hastalık bilgisi</string>
+    <string name="label_cholesterol">Kolesterol</string>
+    <string name="hint_other_diseases">Diğer kronik hastalıklar / notlar</string>
+    <string name="label_other_conditions">Diğer durumlar</string>
 
     <!-- Ana Ekran -->
     <string name="title_main">Ana Sayfa</string>
+    <string name="dashboard_eyebrow_today">Bugün</string>
+    <string name="dashboard_ai_title">AI koç önerisi</string>
+    <string name="dashboard_manual_stats_hint">Su, adım ve egzersiz kartlarına dokunarak veri girin.</string>
+    <string name="dashboard_profile_snapshot">Profil özeti</string>
     <string name="label_daily_goal">Günlük Hedef</string>
     <string name="label_consumed">Alınan</string>
     <string name="label_remaining">Kalan</string>
+    <string name="label_filled">dolu</string>
     <string name="label_kcal">kcal</string>
     <string name="label_todays_meals">Bugünkü Öğünler</string>
     <string name="label_no_meals">Henüz öğün eklenmedi.</string>
     <string name="btn_add_meal">+ Öğün Ekle</string>
     <string name="btn_weekly_report">Haftalık Rapor</string>
     <string name="warning_limit_exceeded">Günlük kalori limitinizi aştınız!</string>
+    <string name="dashboard_percent_format">%1$d%%</string>
+    <string name="dashboard_over_limit_format">%1$d kcal aşıldı</string>
+    <string name="dashboard_default_balance_note">Dengeli kalmak için günün kalanında sebze, yoğurt ve su tüketimini artırın.</string>
+    <string name="dashboard_no_health_warning">Sağlık uyarısı yok. Günlük hedefinize göre dengeli ilerliyorsunuz.</string>
+    <string name="title_smart_suggestions">Akıllı yemek önerileri</string>
     <string name="label_meal_breakfast">Kahvaltı</string>
     <string name="label_meal_lunch">Öğle</string>
     <string name="label_meal_dinner">Akşam</string>
     <string name="label_meal_snack">Atıştırmalık</string>
+    <string name="btn_camera_scan">Kamera ile yemek tara</string>
+    <string name="dashboard_water_title">Su</string>
+    <string name="dashboard_steps_title">Adım</string>
+    <string name="dashboard_exercise_title">Egzersiz</string>
+    <string name="dashboard_meal_summary">Öğün özeti</string>
+    <string name="dashboard_water_format">%1$d / 8 bardak</string>
+    <string name="dashboard_steps_format">%1$d adım</string>
+    <string name="dashboard_exercise_format">%1$d kcal</string>
 
     <!-- Yemek Ekleme -->
     <string name="title_add_meal">Öğün Ekle</string>
+    <string name="add_meal_subtitle">Yemeği seçin, hangi öğüne ekleyeceğinizi belirleyin ve miktarı ister gram ister porsiyon ölçüsüyle girin.</string>
+    <string name="add_meal_section_details">Öğün ve porsiyon bilgisi</string>
+    <string name="add_meal_section_details_hint">Kayıt doğrudan seçtiğiniz öğüne eklenir. Porsiyon ölçüsü gram karşılığına çevrilerek hesaplanır.</string>
+    <string name="add_meal_section_search">Yemek seçimi</string>
+    <string name="label_add_to_meal">Hangi öğüne eklensin?</string>
+    <string name="label_portion_type">Ölçü tipi</string>
     <string name="hint_search_food">Yemek ara…</string>
-    <string name="hint_amount">Miktar (gram)</string>
+    <string name="hint_amount">Miktar</string>
+    <string name="portion_gram">Gram</string>
+    <string name="portion_plate">Tabak</string>
+    <string name="portion_bowl">Kase</string>
+    <string name="portion_tablespoon">Yemek kaşığı</string>
+    <string name="portion_teaspoon">Tatlı kaşığı</string>
+    <string name="portion_glass">Bardak</string>
+    <string name="portion_serving">Porsiyon</string>
+    <string name="portion_piece">Adet</string>
+    <string name="portion_hint_format">1 birim yaklaşık %1$d gram olarak hesaplanır.</string>
+    <string name="selected_food_title">Seçilen yemek</string>
+    <string name="selected_food_ready">Hazır</string>
+    <string name="selected_food_calorie_format">100 gramda yaklaşık %1$d kcal</string>
+    <string name="calculated_calorie_format">Yaklaşık %1$d gram • %2$d kcal</string>
     <string name="warning_diabetes">⚠ Diyabet uyarısı: Bu yiyecek şeker içermektedir!</string>
+    <string name="warning_hypertension">⚠ Tansiyon uyarısı: Bu yiyecek tuzlu veya işlenmiş olabilir.</string>
+    <string name="warning_cholesterol">⚠ Kolesterol uyarısı: Kızartma/yağlı seçenekler yerine ızgara veya sebze ağırlıklı porsiyon tercih edin.</string>
+    <string name="meal_fit_remaining_format">Bu porsiyon sonrası yaklaşık %1$d kcal kalır.</string>
+    <string name="meal_over_remaining_format">Bu porsiyon hedefi yaklaşık %1$d kcal aşabilir.</string>
     <string name="meal_added_success">Öğün eklendi.</string>
     <string name="error_select_food">Lütfen bir yemek seçiniz.</string>
     <string name="error_invalid_amount">Geçerli bir miktar giriniz.</string>
@@ -71,8 +128,58 @@
     <!-- Haftalık Rapor -->
     <string name="title_weekly_report">Haftalık Rapor</string>
     <string name="label_report_goal_met">Hedefe uyuldu ✓</string>
+    <string name="label_report_goal_close">Hedefe yakın</string>
     <string name="label_report_goal_exceeded">Hedef aşıldı ✗</string>
     <string name="label_report_no_data">Veri yok</string>
+    <string name="report_weekly_average">Haftalık ortalama</string>
+    <string name="report_adherence_label">Diyete uyum oranı</string>
+    <string name="report_top_food_label">En çok tüketilen besin</string>
+    <string name="report_top_foods_label">En çok tüketilen besinler</string>
+    <string name="report_monthly_title">Aylık rapor</string>
+    <string name="report_monthly_average">Aylık ortalama</string>
+    <string name="report_monthly_adherence">Aylık uyum</string>
+    <string name="report_monthly_top_foods">Bu ay en çok tüketilenler</string>
+    <string name="report_ai_title">AI analiz raporu</string>
+    <string name="report_average_format">%1$d kcal</string>
+    <string name="report_top_food_format">%1$s</string>
+    <string name="report_top_food_empty">Henüz yeterli veri yok</string>
+    <string name="report_adherence_rate_format">%%%1$d</string>
+    <string name="report_daily_table_title">Günlük alınan kaloriler</string>
+    <string name="report_calendar_title">Takvim görünümü</string>
+    <string name="report_calendar_day_summary">Gün özeti</string>
+    <string name="report_calendar_consumed_format">Alınan: %1$d kcal</string>
+    <string name="report_calendar_goal_format">Hedef: %1$d kcal</string>
+    <string name="report_calendar_meals_empty">Bu gün için öğün kaydı yok.</string>
+    <string name="report_calendar_meals_title">Öğünler</string>
+    <string name="report_col_day">Gün</string>
+    <string name="report_col_consumed">Alınan</string>
+    <string name="report_col_goal">Hedef</string>
+    <string name="report_col_status">Durum</string>
+    <string name="report_col_fire">Ateş</string>
+    <string name="report_streak_label">Diyete uyulan gün streak</string>
+    <string name="report_streak_value_format">%1$d gün</string>
+    <string name="report_status_empty">Yok</string>
+    <string name="report_streak_empty">-</string>
+    <string name="report_streak_break">-</string>
+    <string name="calendar_prev_month">Önceki ay</string>
+    <string name="calendar_next_month">Sonraki ay</string>
+    <string name="calendar_legend_ok">Hedef altı</string>
+    <string name="calendar_legend_close">Hedefe yakın</string>
+    <string name="calendar_legend_over">Limit aşıldı</string>
+    <string name="calendar_legend_empty">Kayıt yok</string>
+    <string name="chart_weekly_title">Haftalık kalori trendi</string>
+    <string name="chart_goal_label">Hedef</string>
+    <string name="tab_weekly">Haftalık</string>
+    <string name="tab_monthly">Aylık</string>
+    <string name="settings_reminder_time">Hatırlatma saati</string>
+    <string name="settings_change_time">Değiştir</string>
+    <string name="settings_time_format">%02d:%02d</string>
+    <string name="settings_meal_time_title">Kahvaltı hatırlatma saati</string>
+    <string name="settings_water_time_title">Su hatırlatma saati</string>
+    <string name="macro_section_title">Makro bilgileri (isteğe bağlı) ›</string>
+    <string name="macro_protein">Protein (g)</string>
+    <string name="macro_carb">Karbonhidrat (g)</string>
+    <string name="macro_fat">Yağ (g)</string>
 
     <!-- Profil Düzenleme -->
     <string name="title_profile_edit">Profili Düzenle</string>
@@ -81,13 +188,40 @@
     <!-- Kamera -->
     <string name="title_camera">Fotoğrafla Tanı</string>
     <string name="btn_take_photo">Fotoğraf Çek</string>
+    <string name="btn_pick_from_gallery">Galeriden Seç</string>
     <string name="camera_analyzing">Analiz ediliyor…</string>
     <string name="btn_confirm_food">Onayla ve Ekle</string>
     <string name="camera_permission_denied">Kamera izni gerekli.</string>
+    <string name="camera_pick_gallery">Galeriden fotoğraf seç</string>
+    <string name="camera_file_error">Dosya oluşturulamadı: %1$s</string>
+    <string name="camera_capture_failed">Fotoğraf alınamadı.</string>
+    <string name="camera_photo_read_failed">Fotoğraf okunamadı.</string>
+    <string name="camera_gallery_pick_failed">Galeriden fotoğraf seçilemedi.</string>
+    <string name="camera_analysis_error">Analiz hatası: %1$s</string>
+    <string name="camera_analysis_rate_limited">AI analiz kotası dolu. Fotoğraf hazır; yemek adı ve kaloriyi manuel girip yine kaydedebilirsiniz.</string>
+    <string name="camera_analysis_missing_key">AI anahtarı bulunamadı. Yemek adı ve kaloriyi manuel girip kaydetmeye devam edebilirsiniz.</string>
+    <string name="camera_analysis_error_generic">AI analizi tamamlanamadı. Fotoğraf hazır; yemek adı ve kaloriyi manuel girip kaydedebilirsiniz.</string>
+    <string name="camera_analysis_network_error">AI servisine ulaşılamadı. İnternet bağlantısını veya servis kotasını kontrol edin; isterseniz manuel girişle devam edebilirsiniz.</string>
+    <string name="camera_food_name_required">Yemek adı gerekli.</string>
     <string name="camera_result_prefix">Tahmin: </string>
+    <string name="camera_subtitle">Yemeği tarayın, yapay zeka kalori ve besin dağılımını tahmin etsin.</string>
+    <string name="camera_ai_result">AI sonuç kartı</string>
+    <string name="camera_food_name">Tespit edilen yemek</string>
+    <string name="camera_calorie_estimate">Tahmini kalori</string>
+    <string name="camera_macro_protein">Protein</string>
+    <string name="camera_macro_carb">Karbonhidrat</string>
+    <string name="camera_macro_fat">Yağ</string>
+    <string name="camera_macro_protein_val">Protein %1$dg</string>
+    <string name="camera_macro_carb_val">Karbonhidrat %1$dg</string>
+    <string name="camera_macro_fat_val">Yağ %1$dg</string>
+    <string name="camera_estimated_note">AI tahminidir; yemek adı ve kaloriyi kaydetmeden önce düzenleyebilirsiniz.</string>
+    <string name="camera_manual_note">AI sonucu alınamadı; yemek adı ve kaloriyi manuel girerek kaydedebilirsiniz.</string>
+    <string name="meal_macro_summary_format">P %1$dg • K %2$dg • Y %3$dg</string>
+    <string name="meal_ai_estimated">AI tahmini</string>
 
     <!-- Menü -->
     <string name="menu_home">Ana Sayfa</string>
+    <string name="menu_search">Keşfet</string>
     <string name="menu_report">Rapor</string>
     <string name="menu_profile">Profil</string>
     <string name="menu_settings">Ayarlar</string>
@@ -110,6 +244,8 @@
 
     <!-- Profil Sayfası -->
     <string name="title_profile">Profilim</string>
+    <string name="profile_section_overview">Genel Bakış</string>
+    <string name="profile_section_preferences">Sistem</string>
     <string name="profile_section_physical">Fiziksel Bilgiler</string>
     <string name="profile_section_health">Sağlık Bilgileri</string>
     <string name="profile_label_age">Yaş</string>
@@ -119,6 +255,13 @@
     <string name="profile_label_bmi">Vücut Kitle İndeksi (VKİ)</string>
     <string name="profile_label_disease">Kronik Hastalık</string>
     <string name="profile_label_calorie_goal">Günlük Kalori Hedefi</string>
+    <string name="label_timezone">Saat dilimi</string>
+    <string name="label_sync_status">Senkronizasyon</string>
+    <string name="sync_local_ready">Firebase senkronizasyonu etkin. Veriler buluta yazılıyor.</string>
+    <string name="sync_not_configured">Firebase senkronizasyonu kullanılamıyor.</string>
+    <string name="sync_last_success_format">Son başarılı senkronizasyon: %1$s</string>
+    <string name="sync_error_format">Senkron hatası: %1$s</string>
+    <string name="sync_pending">Henüz başarılı senkronizasyon kaydı yok.</string>
     <string name="bmi_underweight">Zayıf</string>
     <string name="bmi_normal">Normal</string>
     <string name="bmi_overweight">Kilolu</string>
@@ -130,6 +273,9 @@
 
     <!-- Giriş / Kayıt -->
     <string name="title_login">Giriş Yap</string>
+    <string name="login_hero_tag">Kaloriq • AI</string>
+    <string name="login_hero_title">Yemeğini tara,\nritmini koru.</string>
+    <string name="login_hero_subtitle">Minimal, hızlı ve günlük kullanım için tasarlanmış kalori takip deneyimi.</string>
     <string name="title_register">Kayıt Ol</string>
     <string name="hint_email">E-posta adresi</string>
     <string name="hint_password">Şifre</string>
@@ -139,11 +285,107 @@
     <string name="btn_logout">Çıkış Yap</string>
     <string name="link_go_register">Hesabın yok mu? Kayıt ol</string>
     <string name="link_go_login">Zaten hesabın var mı? Giriş yap</string>
+    <string name="or_continue_with">veya bununla devam et</string>
+    <string name="btn_google_login">Google ile devam et</string>
     <string name="error_invalid_email">Geçerli bir e-posta girin.</string>
     <string name="error_password_short">Şifre en az 6 karakter olmalıdır.</string>
     <string name="error_passwords_not_match">Şifreler eşleşmiyor.</string>
     <string name="error_email_taken">Bu e-posta zaten kayıtlı.</string>
     <string name="error_login_failed">E-posta veya şifre hatalı.</string>
+    <string name="error_google_config_missing">Google ile giriş için Firebase web client yapılandırması eksik.</string>
+    <string name="error_google_login_failed">Google ile giriş tamamlanamadı.</string>
     <string name="logout_confirm_title">Çıkış Yap</string>
     <string name="logout_confirm_message">Oturumu kapatmak istediğinize emin misiniz?</string>
+
+    <!-- Bildirim metinleri (strings.xml üzerinden dil desteği sağlanır) -->
+    <string name="notif_meal_reminder">Kahvaltı ve öğün girişi yapmayı unutmayın.</string>
+    <string name="notif_limit_exceeded">Günlük limiti %1$d kcal aştınız. Hafif bir alternatif seçin.</string>
+    <string name="notif_water_reminder">Su içme hatırlatması: bugün su dengenizi koruyun.</string>
+    <string name="notif_goal_close">Bugün hedefinize %1$d kcal kaldı.</string>
+    <string name="notification_permission_title">Bildirim izni</string>
+    <string name="notification_permission_message">Kahvaltı, su ve hedef uyarılarını alabilmek için bildirim izni gerekir.</string>
+    <string name="notification_permission_settings_message">Bildirimler kapalı. Hatırlatmaları almak için uygulama bildirimlerini ayarlardan açabilirsiniz.</string>
+    <string name="notification_open_settings">Ayarları Aç</string>
+    <string name="settings_section_notifications">Bildirimler</string>
+    <string name="settings_notifications_enabled">Bildirimler açık</string>
+    <string name="settings_notifications_disabled">Bildirimler kapalı</string>
+    <string name="settings_notifications_hint">Kahvaltı, su ve günlük hedef uyarıları için sistem bildirim izni kullanılır.</string>
+    <string name="settings_open_notification_settings">Bildirim Ayarlarını Aç</string>
+    <string name="settings_notif_meal_reminder">Kahvaltı / öğün hatırlatması</string>
+    <string name="settings_notif_water_reminder">Su içme hatırlatması</string>
+    <string name="settings_notif_limit_alert">Günlük limit aşımı uyarısı</string>
+    <string name="settings_notif_goal_alert">Hedefe yaklaşma uyarısı</string>
+
+    <!-- Dashboard — Manuel istatistik girişi -->
+    <string name="dialog_enter_water">Bugün kaç bardak su içtiniz?</string>
+    <string name="dialog_enter_steps">Bugün kaç adım attınız?</string>
+    <string name="dialog_enter_exercise">Egzersizde kaç kcal yaktınız?</string>
+
+    <!-- Öğün düzenleme bottom sheet -->
+    <string name="meal_options_title">Öğün Seçenekleri</string>
+    <string name="btn_edit_meal">Düzenle</string>
+    <string name="hint_edit_calories">Toplam kalori (kcal)</string>
+    <string name="hint_edit_grams">Miktar (gram)</string>
+    <string name="meal_updated_success">Öğün güncellendi.</string>
+
+    <!-- Birim: yaş -->
+    <string name="unit_years">yaş</string>
+
+    <!-- Yemek kaydedildi / hata -->
+    <string name="camera_save_error">Öğün kaydedilemedi. Tekrar deneyin.</string>
+
+    <!-- Öğün ekleme başarı (kamera) -->
+    <string name="btn_add_suggested_meal">Yemek Ekle</string>
+
+    <!-- Genel hata mesajları -->
+    <string name="error_registration_failed_format">Kayıt başarısız: %1$s</string>
+    <string name="error_profile_save_failed_format">Profil kaydedilemedi: %1$s</string>
+    <string name="error_unknown">Bilinmeyen hata</string>
+
+    <!-- MainActivity — su sayacı ve öğün subtitle -->
+    <string name="water_counter_label">/ 8 bardak</string>
+    <string name="meal_subtitle_format">%1$d kcal  •  %2$s</string>
+
+    <!-- Kamera — hata dialog -->
+    <string name="camera_error_dialog_title">AI Analiz Hatası</string>
+    <string name="camera_error_dialog_message_format">Hata kodu:\n\n%1$s\n\nYemek adı ve kaloriyi manuel olarak girebilirsiniz.</string>
+    <string name="btn_ok">Tamam</string>
+
+    <!-- Profil ekranı — değer formatları -->
+    <string name="profile_subtitle_format">%1$s • %2$d %3$s</string>
+    <string name="profile_value_age_format">%1$d %2$s</string>
+    <string name="profile_value_cm_format">%1$d %2$s</string>
+    <string name="profile_value_kg_format">%1$d %2$s</string>
+    <string name="profile_value_kcal_format">%1$d %2$s</string>
+
+    <!-- Su damlacığı emojisi (çevrilmez) -->
+    <string name="emoji_water" translatable="false">💧</string>
+
+    <!-- Güvenlik — şifre güncelleme -->
+    <string name="settings_section_security">Güvenlik</string>
+    <string name="settings_change_password">Şifre Güncelle</string>
+    <string name="dialog_change_password_title">Şifre Güncelle</string>
+    <string name="hint_current_password">Mevcut Şifre</string>
+    <string name="hint_new_password">Yeni Şifre</string>
+    <string name="hint_confirm_new_password">Yeni Şifre (Tekrar)</string>
+    <string name="error_password_mismatch">Şifreler eşleşmiyor.</string>
+    <string name="error_current_password_wrong">Mevcut şifre hatalı. Lütfen tekrar deneyin.</string>
+    <string name="password_changed_success">Şifre başarıyla güncellendi.</string>
+    <string name="settings_google_no_password">Google hesabı ile giriş yapıldı. Şifre değişikliği mevcut değil.</string>
+
+    <!-- Veritabanı adı -->
+    <string name="db_name" translatable="false">calorie_tracking_db</string>
+
+    <!-- Bildirim kanalı açıklaması -->
+    <string name="notif_channel_description">Kalori takip bildirimleri</string>
+
+    <!-- Haftalık rapor — takvim gün kısaltmaları -->
+    <string name="weekday_short_sun">Paz</string>
+    <string name="weekday_short_mon">Pzt</string>
+    <string name="weekday_short_tue">Sal</string>
+    <string name="weekday_short_wed">Çar</string>
+    <string name="weekday_short_thu">Per</string>
+    <string name="weekday_short_fri">Cum</string>
+    <string name="weekday_short_sat">Cmt</string>
+
 </resources>
